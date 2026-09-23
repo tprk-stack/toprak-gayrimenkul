@@ -1,7 +1,8 @@
-// Icerik betigi: yalnizca adres cubugunda #toprak-oto varsa calisir
-// (normal ziyaretlerde sessiz kalir). Gercek tarayici oturumunu kullandigi
-// icin koruma duvarina takilmaz: sayfalari gezer, detaylari okur,
-// fotograflari + JSON dosyasini arka plana indirtir.
+// Icerik betigi: yalnizca adres cubugunda #toprak-oto varsa calisir.
+// ARTIMLI calisir: bilinen ilan gorunce durur (en fazla ~15 yeni).
+// Bilinenler chrome.storage'da tutulur. Fotograflari INDIRMEZ;
+// uzak adresleri JSON'a yazar, indirmeyi dogrulama betigi yapar
+// (foto sunucusu ek korumali degildir).
 (async function () {
   if (!location.hash || location.hash.indexOf('toprak-oto') < 0) return;
 
@@ -21,7 +22,7 @@
   };
   var findPrice = function (r) {
     var t = clean(r.innerText || r.textContent || '');
-    var m = t.match(/(\d[\d.,\s\xa0]*\d)\s*(TL|\u00ba)/i);
+    var m = t.match(/(\d[\d.,\s\xa0]*\d)\s*(TL|\u20ba)/i);
     if (!m) return '';
     if (m[1].replace(/\D/g, '').length < 3) return '';
     return m[0].trim();
@@ -73,43 +74,55 @@
 
   var seen = {};
   var items = [];
+  var durdu = false;
+  var YENI_SINIR = 15;
+
+  function kayit(uu, o) {
+    if (!uu || seen[uu] || uu.indexOf('/ilan/') < 0) return true;
+    if (bilinen[uu]) { durdu = true; return false; }
+    if (!o.title || o.title.length < 8) return true;
+    seen[uu] = 1;
+    items.push(o);
+    if (items.length >= YENI_SINIR) durdu = true;
+    return true;
+  }
 
   function harvest(d, base, bd) {
     var cards = d.querySelectorAll('div.classified');
-    for (var c = 0; c < cards.length; c++) {
+    for (var c = 0; c < cards.length && !durdu; c++) {
       var card = cards[c];
       var la = card.querySelector('.gallery-info a[href*="/ilan/"]') || card.querySelector('a[href*="/ilan/"]');
       if (!la) continue;
       var uu = abs(la.getAttribute('href') || '');
-      if (!uu || seen[uu] || uu.indexOf('/ilan/') < 0) continue;
       var pt = card.querySelector('p.title');
       var tt = clean(la.textContent || '').substring(0, 160)
         || clean(la.getAttribute('title') || '').substring(0, 160)
         || clean((pt && pt.textContent) || '').substring(0, 160);
-      if (!tt || tt.length < 8) continue;
-      seen[uu] = 1;
-      items.push({
+      var pp = findPrice(card);
+      var lt = clean(card.innerText || card.textContent || '');
+      kayit(uu, {
         title: tt,
-        price: findPrice(card) || 'Fiyat icin ilana bakin',
-        location: locOf(card),
+        price: pp || 'Fiyat icin ilana bakin',
+        location: (function () {
+          var lm = lt.match(/Sivas\s*\/\s*([A-Za-z\u00c0-\u024f]+(?:\s+[A-Za-z\u00c0-\u024f]+)?)/);
+          return lm ? lm[0].trim() : 'Sivas';
+        })(),
         image: findImg(card),
         url: uu,
-        area: findArea(clean(card.innerText || card.textContent || '')),
+        area: findArea(lt),
         photos: [],
         desc: '',
       });
     }
+    if (durdu) return;
     var links = d.querySelectorAll('a[href*="/ilan/"]');
-    for (var k = 0; k < links.length; k++) {
+    for (var k = 0; k < links.length && !durdu; k++) {
       var a = links[k];
       var u = abs(a.getAttribute('href') || '');
-      if (!u || seen[u] || u.indexOf('/ilan/') < 0) continue;
       var box = boxFor(a, bd);
       var t = clean(a.getAttribute('title') || '') || clean(a.textContent || '').substring(0, 160);
-      if (!t || t.length < 8) continue;
-      seen[u] = 1;
       var bt = clean(box.innerText || box.textContent || '');
-      items.push({
+      kayit(u, {
         title: t,
         price: findPrice(box) || 'Fiyat icin ilana bakin',
         location: 'Sivas',
@@ -178,11 +191,6 @@
     return out;
   }
 
-  function fileOf(u) {
-    var base = u.split('?')[0].split('#')[0].split('/').pop() || 'foto.jpg';
-    return base.replace(/[^a-zA-Z0-9._-]/g, '_').slice(0, 80);
-  }
-
   function gonder(m) {
     try {
       var r = chrome.runtime.sendMessage(m);
@@ -196,13 +204,20 @@
   badge.setAttribute('style', 'position:fixed;bottom:12px;right:12px;z-index:999999;background:#111;color:#fff;padding:10px 14px;font:13px sans-serif;border-radius:6px;');
   document.body.appendChild(badge);
   function rozet(t) { try { badge.textContent = t; } catch (e) {} }
+
+  var bilinen = {};
+  try {
+    var sakli = await chrome.storage.local.get('bilinen');
+    if (sakli && Array.isArray(sakli.bilinen)) {
+      sakli.bilinen.forEach(function (u) { bilinen[u] = 1; });
+    }
+  } catch (e) { /* bos kumeyle devam: ilk tur tam tarama olur */ }
+
   function bitir(not) {
     try {
-      var f = 0, g = 0, ar = 0;
-      for (var j = 0; j < items.length; j++) {
-        if (items[j].price && items[j].price.indexOf('TL') >= 0) f++;
-        if (items[j].image) g++;
-        if (items[j].area) ar++;
+      if (!items.length) {
+        rozet('Toprak: yeni ilan yok.' + (not ? ' ' + not : ''));
+        return;
       }
       var payload = {
         updatedAt: new Date().toISOString(),
@@ -225,8 +240,19 @@
           };
         }),
       };
+      try {
+        var hepsi = Object.keys(bilinen);
+        items.forEach(function (x) { if (hepsi.indexOf(x.url) < 0) hepsi.unshift(x.url); });
+        chrome.storage.local.set({ bilinen: hepsi.slice(0, 400) });
+      } catch (e) { /* onemsiz */ }
+      var f = 0, g = 0, ar = 0;
+      for (var j = 0; j < items.length; j++) {
+        if (items[j].price && (items[j].price.indexOf('TL') >= 0 || items[j].price.indexOf('₺') >= 0)) f++;
+        if (items[j].image) g++;
+        if (items[j].area) ar++;
+      }
       gonder({ t: 'json', json: JSON.stringify(payload) }).then(function () {
-        rozet(items.length + ' ilan aktarıldı' + (not ? ' ' + not : '') + ' — bu sekme kapatılabilir.');
+        rozet(items.length + ' yeni ilan indirildi (' + f + ' fiyatli, ' + g + ' fotografli, ' + ar + ' metrekareli)' + (not ? ' ' + not : ''));
       });
     } catch (e) {
       rozet('Hata: ' + String((e && e.message) || e));
@@ -240,7 +266,7 @@
   var limited = false;
 
   async function adim() {
-    if (!queue.length || pages >= MAXP) return detayBasla();
+    if (durdu || !queue.length || pages >= MAXP) return detayBasla();
     var url = queue.shift();
     if (seenP[url]) return adim();
     seenP[url] = 1;
@@ -248,8 +274,10 @@
     rozet('Toprak: sayfa ' + pages + ' okunuyor...');
     if (pages === 1) {
       harvest(document, location.href, document.body);
-      var nx = nextUrl(document, location.href);
-      if (nx && !seenP[nx]) queue.push(nx);
+      if (!durdu) {
+        var nx = nextUrl(document, location.href);
+        if (nx && !seenP[nx]) queue.push(nx);
+      }
       await bekle(1500);
       return adim();
     }
@@ -268,24 +296,26 @@
     }
     var doc = new DOMParser().parseFromString(h, 'text/html');
     harvest(doc, url, doc.body);
-    var nx2 = nextUrl(doc, url);
-    if (nx2 && !seenP[nx2]) queue.push(nx2);
+    if (!durdu) {
+      var nx2 = nextUrl(doc, url);
+      if (nx2 && !seenP[nx2]) queue.push(nx2);
+    }
     return adim();
   }
 
   var detailIdx = 0;
   var detailList = [];
   async function detayBasla() {
-    detailList = items.filter(function (x) { return !x.area; }).slice(0, 40);
-    if (!detailList.length) return fotoBasla('');
-    detailIdx = 0;
     var not = limited ? '[sayfa limiti]' : '';
+    detailList = items.filter(function (x) { return !x.area; }).slice(0, 40);
+    if (!detailList.length) return bitir(not);
+    detailIdx = 0;
     rozet('Toprak: detaylar okunuyor 0/' + detailList.length + '...' + not);
     await bekle(1200);
     return detayAdim(not);
   }
   async function detayAdim(not) {
-    if (detailIdx >= detailList.length) return fotoBasla(not);
+    if (detailIdx >= detailList.length) return bitir(not);
     var it = detailList[detailIdx];
     rozet('Toprak: detaylar okunuyor ' + (detailIdx + 1) + '/' + detailList.length + '...');
     try {
@@ -301,36 +331,6 @@
     detailIdx++;
     await bekle(1800 + Math.floor(Math.random() * 900));
     return detayAdim(not);
-  }
-
-  async function fotoBasla(not) {
-    var jobs = [];
-    for (var i = 0; i < items.length && jobs.length < 250; i++) {
-      var it = items[i];
-      var aday = [];
-      if (it.image) aday.push(it.image);
-      for (var k = 0; k < Math.min(3, it.photos.length); k++) aday.push(it.photos[k]);
-      for (var q = 0; q < aday.length; q++) {
-        jobs.push({ it: it, url: aday[q], ana: q === 0 });
-      }
-    }
-    var n = 0;
-    for (var j = 0; j < jobs.length; j++) {
-      var jb = jobs[j];
-      var dosya = fileOf(jb.url);
-      rozet('Toprak: fotograflar indiriliyor ' + (j + 1) + '/' + jobs.length + '...');
-      var r = await gonder({ t: 'img', url: jb.url, file: dosya });
-      if (!r || !r.ok) continue;
-      var yerel = '/ilan-images/' + dosya;
-      if (jb.ana) jb.it.image = yerel;
-      else {
-        var ix = jb.it.photos.indexOf(jb.url);
-        if (ix >= 0) jb.it.photos[ix] = yerel;
-      }
-      n++;
-      await bekle(250);
-    }
-    bitir((not ? not + ' ' : '') + '(' + n + ' fotograf)');
   }
 
   adim();
