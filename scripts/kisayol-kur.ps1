@@ -11,7 +11,7 @@ $s.Description = 'Her acilista ilan senkronu'
 $s.Save()
 $mase = Join-Path $env:USERPROFILE 'Desktop\Toprak Sabah Senkron.lnk'
 $d = $w.CreateShortcut($mase)
-$d.TargetPath = $hedef
+$d.TargetPath = Join-Path $Repo 'scripts\manuel-senkron.bat'
 $d.WorkingDirectory = $Repo
 $d.Save()
 Write-Output 'kisayollar-tamam'

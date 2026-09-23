@@ -9,12 +9,20 @@ güncel fiyat ve detaylar için her karttaki bağlantıdan kaynağa bakınız.
 Her sabah iki adımda çalışır (bilgisayar açıkken):
 
 ```
-08:00  Chrome eklentisi (scripts/uzanti) mağaza sayfalarını gezer,
-       detayları okur, fotoğrafları + ilanlar.json dosyasını indirir
+08:00  Chrome eklentisi (scripts/uzanti) mağaza sayfasındaki YENİ ilanları
+       toplar (bilineni görünce durur), ilanlar.json dosyasını indirir
        → %USERPROFILE%\Downloads\toprak-senkron\
-08:30  scripts/sabah-senkron.bat dosyaları siteye yerleştirir,
+08:30  scripts/sabah-senkron.bat dosyayı siteye yerleştirir,
        değişiklik varsa commit + push eder (canlı site güncellenir)
 ```
+
+Bilgisayar açılışında da aynı işlem sessizce çalışır (Başlangıç kısayolu).
+
+## Tek tıkla manuel güncelleme
+
+Masaüstündeki **"Toprak Sabah Senkron"** simgesine çift tıklayın
+(`scripts/manuel-senkron.bat`): mağaza sayfasını açar, indirmenin bitmesini
+bekler, siteye işler ve değişiklik varsa canlıya gönderir. Tek tık, hepsi bu.
 
 Neden eklenti? Kaynak sitenin koruması sunucusuz/otomatik tarayıcıları
 engellemektedir; eklenti sizin gerçek tarayıcınızın içinden, kendi
