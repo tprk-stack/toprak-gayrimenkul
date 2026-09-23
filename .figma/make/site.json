@@ -1,6 +1,10 @@
 {
-  "description": "Showcases real estate listings with detailed property info and contact options, helping buyers find their ideal homes quickly and easily.",
+  "title": "Toprak Gayrimenkul",
+  "description": "Sivas'ın güvenilir gayrimenkul markası: satılık ve kiralık daire, villa, arsa ve işyeri ilanları.",
   "language": "tr",
+  "icons": {
+    "icon": "logo.svg"
+  },
   "robots": {
     "index": true
   },

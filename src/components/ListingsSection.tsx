@@ -15,6 +15,8 @@ export default function ListingsSection() {
   const [refreshing, setRefreshing] = useState(false);
   const [page, setPage] = useState(1);
   const [selected, setSelected] = useState<Listing | null>(null);
+  const [origin, setOrigin] = useState<{ x: number; y: number } | null>(null);
+  const pendingOrigin = useRef<{ x: number; y: number } | null>(null);
   const openTimer = useRef<number | null>(null);
   const closeTimer = useRef<number | null>(null);
   const modalHover = useRef(false);
@@ -30,7 +32,18 @@ export default function ListingsSection() {
     }
   }
 
-  function scheduleOpen(l: Listing) {
+  function openFrom(el: HTMLElement | null, l: Listing) {
+    if (el) {
+      const r = el.getBoundingClientRect();
+      setOrigin({ x: r.left + r.width / 2, y: r.top + r.height / 2 });
+    } else {
+      setOrigin(null);
+    }
+    cancelTimers();
+    setSelected(l);
+  }
+
+  function scheduleOpen(l: Listing, el: HTMLElement | null) {
     // Dokunmatik cihazlarda hover ile açma; dokunma (tıklama) açar
     if (window.matchMedia?.('(hover: none)').matches) return;
     if (closeTimer.current) {
@@ -38,8 +51,17 @@ export default function ListingsSection() {
       closeTimer.current = null;
     }
     if (selected?.id === l.id) return;
+    if (el) {
+      const r = el.getBoundingClientRect();
+      pendingOrigin.current = { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+    } else {
+      pendingOrigin.current = null;
+    }
     if (openTimer.current) window.clearTimeout(openTimer.current);
-    openTimer.current = window.setTimeout(() => setSelected(l), 450);
+    openTimer.current = window.setTimeout(() => {
+      setOrigin(pendingOrigin.current);
+      setSelected(l);
+    }, 450);
   }
 
   function scheduleClose() {
@@ -186,17 +208,13 @@ export default function ListingsSection() {
               key={l.id}
               role="button"
               tabIndex={0}
-              onClick={() => {
-                cancelTimers();
-                setSelected(l);
-              }}
-              onMouseEnter={() => scheduleOpen(l)}
+              onClick={(e) => openFrom(e.currentTarget, l)}
+              onMouseEnter={(e) => scheduleOpen(l, e.currentTarget)}
               onMouseLeave={() => scheduleClose()}
               onKeyDown={(e) => {
                 if (e.key === 'Enter' || e.key === ' ') {
                   e.preventDefault();
-                  cancelTimers();
-                  setSelected(l);
+                  openFrom(e.currentTarget as HTMLElement, l);
                 }
               }}
               className="group cursor-pointer block outline-none relative"
@@ -300,6 +318,7 @@ export default function ListingsSection() {
       )}
       <ListingModal
         listing={selected}
+        origin={origin}
         onClose={() => {
           cancelTimers();
           setSelected(null);

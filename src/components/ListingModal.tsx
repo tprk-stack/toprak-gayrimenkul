@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Listing } from '../lib/ilanlar';
 import { assetUrl } from '../lib/ilanlar';
 
@@ -18,26 +18,47 @@ export default function ListingModal({
   listing,
   onClose,
   onHoverChange,
+  origin,
 }: {
   listing: Listing | null;
   onClose: () => void;
   onHoverChange?: (hovering: boolean) => void;
+  origin?: { x: number; y: number } | null;
 }) {
   const [photoIdx, setPhotoIdx] = useState(0);
+  const [phase, setPhase] = useState<'enter' | 'open' | 'exit'>('enter');
+  const closeTimer = useRef<number | null>(null);
+
+  function beginClose() {
+    if (phase === 'exit') return;
+    setPhase('exit');
+    if (closeTimer.current) window.clearTimeout(closeTimer.current);
+    closeTimer.current = window.setTimeout(onClose, 240);
+  }
 
   useEffect(() => {
     setPhotoIdx(0);
+    setPhase('enter');
+    const raf = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setPhase('open')),
+    );
     if (!listing) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') beginClose();
     };
     window.addEventListener('keydown', onKey);
     const prev = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
     return () => {
+      cancelAnimationFrame(raf);
       window.removeEventListener('keydown', onKey);
       document.body.style.overflow = prev;
+      if (closeTimer.current) {
+        window.clearTimeout(closeTimer.current);
+        closeTimer.current = null;
+      }
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [listing, onClose]);
 
   const photos = useMemo(() => {
@@ -47,6 +68,16 @@ export default function ListingModal({
   }, [listing]);
 
   if (!listing) return null;
+
+  // Kaynak ilanın ekran konumu → pencere oradan büyüyerek gelir, oraya küçülerek gider
+  const cx = typeof window !== 'undefined' ? window.innerWidth / 2 : 0;
+  const cy = typeof window !== 'undefined' ? window.innerHeight / 2 : 0;
+  const dx = origin ? origin.x - cx : 0;
+  const dy = origin ? origin.y - cy : 0;
+  const panelTransform =
+    phase === 'open'
+      ? 'translate(0px, 0px) scale(1)'
+      : `translate(${dx}px, ${dy}px) scale(0.22)`;
 
   const rows: Array<[string, string]> = [
     ['Fiyat', listing.price],
@@ -60,15 +91,26 @@ export default function ListingModal({
   return (
     <div
       className="fixed inset-0 z-[100] flex items-end sm:items-center justify-center sm:p-6"
-      style={{ background: 'rgba(8,7,6,0.55)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}
-      onClick={onClose}
+      style={{
+        background: 'rgba(8,7,6,0.55)',
+        backdropFilter: 'blur(6px)',
+        WebkitBackdropFilter: 'blur(6px)',
+        opacity: phase === 'open' ? 1 : 0,
+        transition: 'opacity 260ms ease',
+      }}
+      onClick={beginClose}
       role="dialog"
       aria-modal="true"
       aria-label={listing.title}
     >
       <div
         className="w-full sm:max-w-3xl lg:max-w-4xl max-h-[92vh] sm:max-h-[88vh] overflow-y-auto rounded-t-3xl sm:rounded-[20px]"
-        style={GLASS}
+        style={{
+          ...GLASS,
+          transform: panelTransform,
+          opacity: phase === 'open' ? 1 : 0,
+          transition: 'transform 380ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms ease',
+        }}
         onClick={(e) => e.stopPropagation()}
         onMouseEnter={() => onHoverChange?.(true)}
         onMouseLeave={() => onHoverChange?.(false)}
@@ -119,7 +161,7 @@ export default function ListingModal({
                 {listing.location} · {listing.category}
               </div>
               <button
-                onClick={onClose}
+                onClick={beginClose}
                 aria-label="Kapat"
                 className="w-8 h-8 flex-shrink-0 text-lg leading-none"
                 style={{ background: 'rgba(15,14,13,0.6)', color: '#f0ece4', border: '1px solid rgba(200,169,110,0.4)', borderRadius: '50%' }}
@@ -192,7 +234,7 @@ export default function ListingModal({
                 sahibinden.com'da Aç →
               </a>
               <button
-                onClick={onClose}
+                onClick={beginClose}
                 className="px-6 py-3.5 text-sm tracking-widest uppercase rounded-xl"
                 style={{ border: '1px solid rgba(240,236,228,0.3)', color: '#f0ece4' }}
               >
