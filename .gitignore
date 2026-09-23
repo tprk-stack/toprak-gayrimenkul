@@ -7,6 +7,17 @@ sayfa.html
 urls.txt
 urls-ornek.txt
 ilan-test.json
+# Yerel otomasyon (yalnizca bu bilgisayarda; GitHub'a gonderilmez)
+scripts/uzanti/
+scripts/sabah-senkron.bat
+scripts/sabah-senkron-kur.bat
+scripts/manuel-senkron.bat
+scripts/bekle-indirme.mjs
+scripts/kisayol-kur.ps1
+scripts/dogrula.mjs
+scripts/elle-aktar.mjs
+ILAN-SENKRONIZASYON.md
+.github/workflows/ilan-sync.yml
 .cache/
 .env*
 .vite/
