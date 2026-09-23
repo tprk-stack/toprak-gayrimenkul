@@ -46,10 +46,10 @@ const TESTIMONIALS = [
 ]
 
 const STATS = [
-  { value: '₺1.2M', label: '2025\'te Gerçekleşen Satış' },
-  { value: '520+', label: 'Tamamlanan İşlem' },
+  { value: '₺2.4Mr', label: '2026\'da Gerçekleşen Satış' },
+  { value: '780+', label: 'Tamamlanan İşlem' },
   { value: '%97', label: 'Müşteri Memnuniyeti' },
-  { value: '18 yıl', label: 'Sivas\'ta Deneyim' },
+  { value: '20 yıl', label: 'Sivas\'ta Deneyim' },
 ]
 
 export default function App() {
@@ -134,7 +134,7 @@ export default function App() {
             — Toprak Gayrimenkul Sivas
           </p>
           <p className="text-base md:text-lg max-w-xl mb-10" style={{ color: '#c4bfb5', fontWeight: 300, lineHeight: 1.7 }}>
-            On sekiz yıllık Sivas deneyimiyle doğru mülkü, doğru fiyata, doğru zamanda sunuyoruz. Güven, şeffaflık ve sonuç odaklı hizmet.
+            Yirmi yıllık Sivas deneyimiyle doğru mülkü, doğru fiyata, doğru zamanda sunuyoruz. Güven, şeffaflık ve sonuç odaklı hizmet.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="#projeler"
@@ -301,9 +301,10 @@ export default function App() {
             </p>
             <div className="flex flex-col gap-6">
               {[
-                { label: 'Telefon', value: '+90 (346) 224 08 12' },
+                { label: 'Telefon', value: '0346 221 11 11' },
+                { label: 'Cep', value: '0535 664 00 74' },
                 { label: 'E-posta', value: 'info@toprakgayrimenkul.com.tr' },
-                { label: 'Adres', value: 'Kızılırmak Cad. No. 47/A, Sivas Merkez, 58000' },
+                { label: 'Adres', value: 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez' },
                 { label: 'Çalışma Saatleri', value: 'Pzt – Cum 09:00 – 18:30 · Cmt randevuyla' },
               ].map(c => (
                 <div key={c.label}>
