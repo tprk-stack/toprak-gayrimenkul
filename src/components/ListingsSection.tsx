@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { STORE_URL, timeAgo, assetUrl, type Listing } from '../lib/ilanlar';
 import { useListings } from '../hooks/useListings';
-import ListingModal from './ListingModal';
+import ListingModal, { type ListingModalHandle } from './ListingModal';
 
 const PLACEHOLDER =
   'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=560&fit=crop&auto=format';
@@ -20,6 +20,7 @@ export default function ListingsSection() {
   const openTimer = useRef<number | null>(null);
   const closeTimer = useRef<number | null>(null);
   const modalHover = useRef(false);
+  const modalRef = useRef<ListingModalHandle | null>(null);
 
   function cancelTimers() {
     if (openTimer.current) {
@@ -64,15 +65,21 @@ export default function ListingsSection() {
     }, 450);
   }
 
+  function requestModalClose() {
+    if (modalRef.current) modalRef.current.beginClose();
+    else setSelected(null);
+  }
+
   function scheduleClose() {
     if (openTimer.current) {
       window.clearTimeout(openTimer.current);
       openTimer.current = null;
     }
     if (closeTimer.current) window.clearTimeout(closeTimer.current);
+    // Karta-pencere arası boşluğu geçmeye zaman tanı (hızlı geçişlerde kapanmasın)
     closeTimer.current = window.setTimeout(() => {
-      if (!modalHover.current) setSelected(null);
-    }, 250);
+      if (!modalHover.current) requestModalClose();
+    }, 700);
   }
 
   // Kapanışta zamanlayıcıları temizle
@@ -317,6 +324,7 @@ export default function ListingsSection() {
         </>
       )}
       <ListingModal
+        ref={modalRef}
         listing={selected}
         origin={origin}
         onClose={() => {

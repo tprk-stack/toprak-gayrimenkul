@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import type { Listing } from '../lib/ilanlar';
 import { assetUrl } from '../lib/ilanlar';
 
@@ -14,17 +14,19 @@ const GLASS: React.CSSProperties = {
   boxShadow: '0 32px 90px rgba(0,0,0,0.65), inset 0 1px 0 rgba(255,255,255,0.14)',
 };
 
-export default function ListingModal({
-  listing,
-  onClose,
-  onHoverChange,
-  origin,
-}: {
-  listing: Listing | null;
-  onClose: () => void;
-  onHoverChange?: (hovering: boolean) => void;
-  origin?: { x: number; y: number } | null;
-}) {
+export interface ListingModalHandle {
+  beginClose: () => void;
+}
+
+const ListingModal = forwardRef<
+  ListingModalHandle,
+  {
+    listing: Listing | null;
+    onClose: () => void;
+    onHoverChange?: (hovering: boolean) => void;
+    origin?: { x: number; y: number } | null;
+  }
+>(function ListingModal({ listing, onClose, onHoverChange, origin }, ref) {
   const [photoIdx, setPhotoIdx] = useState(0);
   const [phase, setPhase] = useState<'enter' | 'open' | 'exit'>('enter');
   const closeTimer = useRef<number | null>(null);
@@ -33,8 +35,10 @@ export default function ListingModal({
     if (phase === 'exit') return;
     setPhase('exit');
     if (closeTimer.current) window.clearTimeout(closeTimer.current);
-    closeTimer.current = window.setTimeout(onClose, 240);
+    closeTimer.current = window.setTimeout(onClose, 300);
   }
+
+  useImperativeHandle(ref, () => ({ beginClose }));
 
   useEffect(() => {
     setPhotoIdx(0);
@@ -246,4 +250,8 @@ export default function ListingModal({
       </div>
     </div>
   );
-}
+});
+
+ListingModal.displayName = 'ListingModal';
+
+export default ListingModal;
