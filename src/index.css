@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Outfit:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: #0f0e0d;
+  --color-foreground: #f0ece4;
+  --color-card: #1a1916;
+  --color-card-foreground: #f0ece4;
+  --color-primary: #c8a96e;
+  --color-primary-foreground: #0f0e0d;
+  --color-secondary: #2a2825;
+  --color-secondary-foreground: #c4bfb5;
+  --color-muted: #222019;
+  --color-muted-foreground: #8a8478;
+  --color-accent: #c8a96e;
+  --color-accent-foreground: #0f0e0d;
+  --color-border: rgba(200, 169, 110, 0.15);
+  --color-ring: #c8a96e;
+  --radius: 2px;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background-color: #0f0e0d;
+  color: #f0ece4;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Fraunces', Georgia, serif;
+}

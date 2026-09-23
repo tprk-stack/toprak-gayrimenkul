@@ -1,0 +1,28 @@
+name: ilan-sync
+
+on:
+  schedule:
+    - cron: '30 6 * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci || npm install
+      - run: npm run ilan:sync || true
+      - name: Commit updated cache
+        run: |
+          if git diff --quiet public/ilanlar.json; then
+            echo "Değişiklik yok."
+          else
+            git config user.name "ilan-bot"
+            git config user.email "ilan-bot@local"
+            git add public/ilanlar.json
+            git commit -m "chore: sahibinden ilan önbelleğini güncelle"
+            git push
+          fi
