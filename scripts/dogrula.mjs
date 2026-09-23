@@ -88,13 +88,22 @@ if (listings.length === 0) {
 }
 const mevcut = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf-8')) : { listings: [] };
 
-// Artimli birlestirme: yeniler one gecer, bilinen URL tekrar eklenmez (en fazla 300)
+// Artimli birlestirme: yeniler one gecer, bilinen URL tekrar eklenmez (en fazla 300).
+// Ardindan ilan numarasina gore buyukten kucuge siralanir (en guncel en basta).
 const byUrl = new Map();
 for (const l of listings) byUrl.set(l.url, l);
 for (const l of mevcut.listings ?? []) {
   if (l && l.url && !byUrl.has(l.url)) byUrl.set(l.url, l);
 }
-const merged = [...byUrl.values()].slice(0, 300);
+for (const l of byUrl.values()) {
+  if (l && !l.ilanNo) {
+    const groups = (String(l.url).match(/\d{6,}/g) ?? []).filter((g) => g.length >= 7);
+    if (groups.length) l.ilanNo = groups[groups.length - 1];
+  }
+}
+const merged = [...byUrl.values()]
+  .sort((a, b) => Number(b.ilanNo || 0) - Number(a.ilanNo || 0))
+  .slice(0, 300);
 const yeniSayi = listings.filter((l) => !(mevcut.listings ?? []).some((m) => m && m.url === l.url)).length;
 if (yeniSayi === 0) {
   console.log('Yeni ilan yok, dosya degismedi.');
