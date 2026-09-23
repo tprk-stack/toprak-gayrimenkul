@@ -86,6 +86,20 @@ if (listings.length === 0) {
   console.error('Gecerli ilan yok.');
   process.exit(4);
 }
+const mevcut = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf-8')) : { listings: [] };
+
+// Artimli birlestirme: yeniler one gecer, bilinen URL tekrar eklenmez (en fazla 300)
+const byUrl = new Map();
+for (const l of listings) byUrl.set(l.url, l);
+for (const l of mevcut.listings ?? []) {
+  if (l && l.url && !byUrl.has(l.url)) byUrl.set(l.url, l);
+}
+const merged = [...byUrl.values()].slice(0, 300);
+const yeniSayi = listings.filter((l) => !(mevcut.listings ?? []).some((m) => m && m.url === l.url)).length;
+if (yeniSayi === 0) {
+  console.log('Yeni ilan yok, dosya degismedi.');
+  process.exit(0);
+}
 
 // Referansli fotograflari kopyala
 let foto = 0;
@@ -104,9 +118,9 @@ for (const l of listings) {
   delete l._srcPhotos;
 }
 
-// Referanssiz dosyalari temizle
+// Referanssiz dosyalari temizle (birlesmis liste baz alinir)
 const ref = new Set();
-listings.forEach((l) => {
+merged.forEach((l) => {
   if (l.image.startsWith('/ilan-images/')) ref.add(basename(l.image));
   l.photos.forEach((p) => ref.add(basename(p)));
 });
@@ -116,5 +130,5 @@ for (const f of readdirSync(IMGDIR)) {
   }
 }
 
-writeFileSync(OUT, JSON.stringify({ updatedAt: new Date().toISOString(), source: raw.source ?? '', count: listings.length, listings }, null, 2), 'utf-8');
-console.log(`OK ${listings.length} ilan, ${foto} fotograf yerlesti.`);
+writeFileSync(OUT, JSON.stringify({ updatedAt: new Date().toISOString(), source: raw.source ?? '', count: merged.length, listings: merged }, null, 2), 'utf-8');
+console.log(`OK ${yeniSayi} yeni + toplam ${merged.length} ilan, ${foto} fotograf yerlesti.`);

@@ -25,6 +25,14 @@ if %errorlevel%==0 (
   echo [HATA] Gorev kurulamadi. Bu dosyaya sag tiklayip "Yonetici olarak calistir" deyin.
 )
 
+echo [3/3] tek tik kisayollari olusturuluyor (masaustu + bilgisayar acilisi)...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%REPO%\scripts\kisayol-kur.ps1" -Repo "%REPO%" 2>&1 | findstr /c:"kisayollar-tamam" >nul 2>&1
+if %errorlevel%==0 (
+  echo [OK] Masaustunde "Toprak Sabah Senkron" simgesi + acilista otomatik baslatma kuruldu.
+) else (
+  echo [UYARI] Kisayol kurulamadi, zamanlanmis gorev yine de calisir.
+)
+
 echo.
 echo ============================================================
 echo EKLENTI KURULUMU (Chrome'da bir kez, 1 dakika):
