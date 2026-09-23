@@ -1,17 +1,17 @@
 #!/usr/bin/env node
 /**
- * Sahibinden mağaza senkron betiği — bağımlılık gerektirmez (yalnızca Node 18+).
+ * Magaza senkron betigi (yedek/elle kullanim) — bagimlilik gerektirmez (yalnizca Node 18+).
  *
- * Kullanım:
- *   npm run ilan:sync                                  → canlı çekmeyi dener (Cloudflare genelde 403 verir, eski önbellek korunur)
- *   npm run ilan:sync -- --from-file=sayfa.html        → kaydedilmiş mağaza HTML'inden ayrıştırır (ÖNERİLEN manuel adım)
+ * Kullanim:
+ *   npm run ilan:sync                                  → canli cekmeyi dener (koruma cogunlukla engeller, eski onbellek korunur)
+ *   npm run ilan:sync -- --from-file=sayfa.html        → kaydedilmis magaza HTML'inden ayristirir (ONERILEN manuel adim)
  *   npm run ilan:sync -- --from-file=sayfa.html --out=public/ilanlar.json
- *   npm run ilan:sync -- --urls=urls.txt               → satır satır ilan linklerinden kart üretir
+ *   npm run ilan:sync -- --urls=urls.txt               → satir satir ilan linklerinden kart uretir
  *
  * Neden --from-file?
- * sivastoprakgayrimenkulsivas.sahibinden.com Cloudflare arkasında; çıplak fetch 403 döner.
- * Güvenilir akış: tarayıcıda mağazayı aç → Ctrl+S (Web sayfası, yalnızca HTML) → bu betiğe ver.
- * Zamanlanmış tam otomatik çekiş için Playwright + gizli tarayıcı gerekir; ayrıntı SAHIBINDEN_ENTEGRASYON.md'de.
+ * Kaynak site bot korumasi arkasinda; ciplak fetch cogu zaman engellenir.
+ * Guvenilir akis: tarayicida magazayi ac → Ctrl+S (Web sayfasi, yalnizca HTML) → bu betige ver.
+ * Otomatik akis icin ILAN-SENKRONIZASYON.md dosyasina bakin.
  */
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';

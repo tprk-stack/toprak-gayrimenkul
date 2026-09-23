@@ -369,13 +369,12 @@ function figmaMakeKitPlugin(options: { storiesGlob: string | string[] }): Plugin
 }
 
 /**
- * Tek-tıkla ilan aktarımının yerel alıcısı (SADECE dev sunucusu).
+ * Elle ilan aktarımının yerel alıcısı (SADECE dev sunucusu).
  *
- * Akış: kullanıcı mağaza sayfasında "Toprak İlan Aktar" yer imine tıklar →
- * yer imi DOM'dan ilanları okuyup window.postMessage ile bu siteye yollar →
+ * Akış: kullanıcı mağaza sayfasındaki ilanları toplayıp bu siteye yollar →
  * site /__ilan-sync'e POST eder → bu middleware public/ilanlar.json'u günceller.
  *
- * Neden böyle? sahibinden Cloudflare koruması sunucu taraflı çekişe izin
+ * Neden böyle? Kaynak sitenin koruması sunucu taraflı çekişe izin
  * vermez; ama kullanıcının kendi tarayıcısındaki DOM'a erişimde engel yoktur.
  * Üretim derlemesine dahil edilmez (`apply: 'serve'`).
  */
@@ -497,7 +496,7 @@ function ilanSyncReceiver(): Plugin {
     return `${hash}${ext}`
   }
 
-  /** Uzak fotoğrafı indirir (sahibinden sıcak-bağlantı korumasına Referer ile). */
+  /** Uzak fotoğrafı indirir (kaynak sitenin sıcak-bağlantı korumasına Referer ile). */
   async function fetchImage(url: string): Promise<{ buf: Buffer; contentType: string } | null> {
     try {
       const res = await fetch(url, {

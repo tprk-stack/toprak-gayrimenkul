@@ -3,7 +3,7 @@ import {
   FALLBACK_LISTINGS,
   type Listing,
   type ListingsCache,
-} from '../lib/sahibinden';
+} from '../lib/ilanlar';
 
 export type ListingsStatus =
   | { state: 'loading' }

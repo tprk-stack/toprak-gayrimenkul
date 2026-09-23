@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import type { Listing } from '../lib/sahibinden';
-import { assetUrl } from '../lib/sahibinden';
+import type { Listing } from '../lib/ilanlar';
+import { assetUrl } from '../lib/ilanlar';
 
 const PLACEHOLDER =
   'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=560&fit=crop&auto=format';

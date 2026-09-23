@@ -1,14 +1,13 @@
-// Sahibinden mağaza ilan altyapısı — tipler, sabitler ve HTML ayrıştırıcılar.
+// Dis ilan kaynagi altyapisi — tipler, sabitler ve HTML ayristiricilar.
 //
 // Neden direkt fetch yok?
-// sivastoprakgayrimenkulsivas.sahibinden.com Cloudflare bot koruması arkasında.
-// Tarayıcıdan veya sunucudan çıplak fetch → HTTP 403 ("Just a moment...").
-// Bu yüzden altyapı 3 katmanlıdır:
-//   1) `public/ilanlar.json` → sitenin okuduğu önbellek (hızlı, SEO dostu)
-//   2) `scripts/sync-sahibinden.mjs` → önbelleği güncelleyen senkron betiği
-//   3) `useListings` + `ListingsSection` → önbelleği ekrana basan UI
+// Kaynak site bot korumasi arkasinda; ciplak istekler cogu zaman engellenir.
+// Bu yuzden altyapi 3 katmanlidir:
+//   1) `public/ilanlar.json` → sitenin okudugu onbellek
+//   2) `scripts/oto-sync.mjs` (+ zamanlanmis gorev) → onbellegi guncelleyen senkron
+//   3) `useListings` + `ListingsSection` → onbellegi ekrana basan arayuz
 //
-// Otomatikleştirme seçenekleri SAHIBINDEN_ENTEGRASYON.md dosyasında anlatılıyor.
+// Ayrintilar ILAN-SENKRONIZASYON.md dosyasinda anlatiliyor.
 
 export const STORE_URL =
   'https://sivastoprakgayrimenkulsivas.sahibinden.com/';
@@ -103,7 +102,7 @@ export function guessCategory(title: string): string {
   return 'Satılık';
 }
 
-/** Göreli sahibinden URL'sini mutlak URL'ye çevirir. */
+/** Göreli ilan URL'sini mutlak URL'ye çevirir. */
 export function absolutize(href: string): string {
   if (!href) return STORE_URL;
   if (href.startsWith('http')) return href;
@@ -114,7 +113,7 @@ export function absolutize(href: string): string {
 
 /**
  * Mağaza / arama sayfası HTML'inden ilanları çıkarır.
- * Bağımlılık gerektirmez; regex tabanlıdır ve sahibinden'in klasik
+ * Bağımlılık gerektirmez; regex tabanlıdır ve portalın klasik
  * `searchResultsRowClass` satır yapısı + genel `<a href="/ilan/...">` yedeğini dener.
  */
 export function parseListingsFromHtml(html: string): Listing[] {
@@ -123,7 +122,7 @@ export function parseListingsFromHtml(html: string): Listing[] {
 
   const push = (l: Listing) => {
     if (!l.url || seen.has(l.url)) return;
-    // sahibinden dışı linkleri ele
+    // portal dışı linkleri ele
     if (!l.url.includes('sahibinden.com')) return;
     seen.add(l.url);
     out.push(l);

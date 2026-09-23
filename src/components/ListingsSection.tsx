@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { STORE_URL, timeAgo, assetUrl, type Listing } from '../lib/sahibinden';
+import { STORE_URL, timeAgo, assetUrl, type Listing } from '../lib/ilanlar';
 import { useListings } from '../hooks/useListings';
 import ListingModal from './ListingModal';
 

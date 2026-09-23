@@ -1,18 +1,17 @@
-// "Toprak İlan Aktar" yer imi (bookmarklet).
+// "Toprak İlan Aktar" yer imi (bookmarklet) — elle aktarım yedeği.
 //
-// Kullanım: sitedeki #yonetim panelindeki "İlan Aktar" bağlantısını
-// tarayıcının yer imleri çubuğuna sürükle → sahibinden mağaza sayfasında tıkla.
+// Kullanım: paneldeki "İlan Aktar" bağlantısını
+// tarayıcının yer imleri çubuğuna sürükle → mağaza sayfasında tıkla.
 // Yer imi sayfanın DOM'undan ilanları okur, window.postMessage ile localhost'taki
 // siteye yollar; site /__ilan-sync alıcısına POST eder, ilanlar anında düşer.
 //
-// Neden bu yöntem? Cloudflare sunucu taraflı çekişi engeller ama kullanıcının
-// kendi tarayıcısındaki DOM'a erişimde hiçbir engel yoktur. CSP güvenlidir:
-// veri postMessage ile taşınır, sayfadan localhost'a fetch yapılmaz.
+// Neden bu yöntem? Kaynak sitenin koruması sunucu taraflı çekişi engeller ama
+// kullanıcının kendi tarayıcısındaki DOM'a erişimde hiçbir engel yoktur.
 
 export const RECEIVER_ORIGIN = 'http://localhost:8443';
 
 /* eslint-disable */
-// Bu fonksiyon yabancı sayfada (sahibinden) çalışır: bağımsız olmalı,
+// Bu fonksiyon yabancı sayfada (ilan portalı) çalışır: bağımsız olmalı,
 // dışa ait hiçbir değişkene kapanmamalı, __ORIGIN__ yer tutucusunu kullanmalı.
 function bookmarkletMain() {
   var ORIGIN = '__ORIGIN__';

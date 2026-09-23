@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import ListingsSection from './components/ListingsSection'
-import IlanYonetimi from './components/IlanYonetimi'
 
 const NAV_LINKS = ['Projeler', 'Hizmetler', 'Hakkımızda', 'Referanslar', 'İletişim']
 
@@ -172,7 +171,7 @@ export default function App() {
         </div>
       </section>
 
-      {/* FEATURED PROPERTIES — sahibinden önbelleğinden canlı okur (public/ilanlar.json) */}
+      {/* FEATURED PROPERTIES — ilan önbelleğinden canlı okur (public/ilanlar.json) */}
       <ListingsSection />
 
       {/* FULL-WIDTH BANNER */}
@@ -371,7 +370,6 @@ export default function App() {
       </section>
 
       {/* FOOTER */}
-      <IlanYonetimi />
       <footer style={{ background: '#111009', borderTop: '1px solid rgba(200,169,110,0.12)' }}>
         <div className="max-w-7xl mx-auto px-8 md:px-16 lg:px-24 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>

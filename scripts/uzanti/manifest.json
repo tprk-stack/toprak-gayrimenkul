@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Toprak Sabah Senkronu",
+  "version": "1.0.0",
+  "description": "Magaza ilanlarini her sabah otomatik toplayip dosyaya indirir.",
+  "permissions": ["alarms", "downloads", "storage"],
+  "host_permissions": [
+    "https://sivastoprakgayrimenkulsivas.sahibinden.com/*",
+    "https://www.sahibinden.com/*",
+    "https://sahibinden.com/*",
+    "https://*.sahibinden.com/*",
+    "https://*.shbdn.com/*"
+  ],
+  "background": { "service_worker": "arka-plan.js" },
+  "action": { "default_title": "Simdi senkronize et" },
+  "content_scripts": [
+    {
+      "matches": ["https://sivastoprakgayrimenkulsivas.sahibinden.com/*"],
+      "js": ["icerik.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
