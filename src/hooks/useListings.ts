@@ -10,7 +10,7 @@ export type ListingsStatus =
   | { state: 'live'; updatedAt: string; count: number }
   | { state: 'fallback'; reason: string };
 
-const CACHE_URL = '/ilanlar.json';
+const CACHE_URL = `${import.meta.env.BASE_URL}ilanlar.json`;
 const POLL_MS = 5 * 60 * 1000; // 5 dakikada bir tazele
 
 export function useListings() {

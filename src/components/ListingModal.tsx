@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { Listing } from '../lib/sahibinden';
+import { assetUrl } from '../lib/sahibinden';
 
 const PLACEHOLDER =
   'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=560&fit=crop&auto=format';
@@ -41,7 +42,7 @@ export default function ListingModal({
 
   const photos = useMemo(() => {
     if (!listing) return [];
-    const all = [listing.image, ...(listing.photos ?? [])].filter(Boolean);
+    const all = [listing.image, ...(listing.photos ?? [])].filter(Boolean).map(assetUrl);
     return [...new Set(all)];
   }, [listing]);
 

@@ -42,6 +42,13 @@ export interface ListingsCache {
   note?: string;
 }
 
+/** Kök-göreli varlık yolunu derleme tabanına uydurur (GitHub Pages proje yolu). */
+export function assetUrl(u: string): string {
+  if (!u) return u;
+  if (u.startsWith('/')) return `${import.meta.env.BASE_URL}${u.slice(1)}`;
+  return u;
+}
+
 export const FALLBACK_LISTINGS: Listing[] = [
   {
     id: 'fallback-1',

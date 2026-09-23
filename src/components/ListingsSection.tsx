@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { STORE_URL, timeAgo, type Listing } from '../lib/sahibinden';
+import { STORE_URL, timeAgo, assetUrl, type Listing } from '../lib/sahibinden';
 import { useListings } from '../hooks/useListings';
 import ListingModal from './ListingModal';
 
@@ -204,7 +204,7 @@ export default function ListingsSection() {
             >
               <div className="relative overflow-hidden" style={{ height: 280 }}>
                 <img
-                  src={l.image || PLACEHOLDER}
+                  src={assetUrl(l.image) || PLACEHOLDER}
                   alt={l.title}
                   loading="lazy"
                   referrerPolicy="no-referrer"

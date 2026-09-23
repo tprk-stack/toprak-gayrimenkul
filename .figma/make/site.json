@@ -1,7 +1,8 @@
 {
   "description": "Showcases real estate listings with detailed property info and contact options, helping buyers find their ideal homes quickly and easily.",
+  "language": "tr",
   "robots": {
-    "index": false
+    "index": true
   },
   "accessibility": {
     "addBypassLinks": false,
