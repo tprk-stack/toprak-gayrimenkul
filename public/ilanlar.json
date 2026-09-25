@@ -1,10 +1,38 @@
 {
-  "updatedAt": "2026-09-24T07:30:30.157Z",
+  "updatedAt": "2026-09-25T06:55:23.338Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 85,
+  "count": 91,
   "listings": [
     {
-      "id": "sabah-5",
+      "id": "sabah-2",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN PRESTİJ EXCLUSİVE DE LÜKS 3.5+1",
+      "price": "8.900.000 TL",
+      "priceNumeric": 8900000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/dc9b7dddf481ce36.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-prestij-exclusive-de-luks-3.5-plus1-1342058602/detay",
+      "area": "177 m²",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1342058602"
+    },
+    {
+      "id": "sabah-3",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN millet bahçesi yanında KİRALIK 3+1",
+      "price": "20.000 TL",
+      "priceNumeric": 20000,
+      "location": "Sivas / Merkez",
+      "category": "Kiralık",
+      "image": "/ilan-images/b25581fa0aad91e7.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-kiralik-sivas-toprak-gayrimenkulden-millet-bahcesi-yaninda-kiralik-3-plus1-1341996171/detay",
+      "area": "115 m²",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1341996171"
+    },
+    {
+      "id": "sabah-12",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇARŞI MERKEZE YAKIN KİRALIK 3+1DAİRE",
       "price": "31.000 TL",
       "priceNumeric": 31000,
@@ -18,7 +46,7 @@
       "ilanNo": "1341603793"
     },
     {
-      "id": "sabah-9",
+      "id": "sabah-17",
       "title": "SİVAS TOPRAK GAYRİMENKULDAN KARŞIYAKADA SATILIK FIRSAT ARSA",
       "price": "3.650.000 TL",
       "priceNumeric": 3650000,
@@ -32,7 +60,7 @@
       "ilanNo": "1341586527"
     },
     {
-      "id": "sabah-10",
+      "id": "sabah-18",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SERPİNCİKTE YATIRIMLIK SATILIK TARLA",
       "price": "6.500.000 TL",
       "priceNumeric": 6500000,
@@ -46,7 +74,7 @@
       "ilanNo": "1341493050"
     },
     {
-      "id": "sabah-6",
+      "id": "sabah-15",
       "title": "TOPRAK GAYRİMENKULDEN BAĞDAT CADDESİNDE 1,5+1 EŞYALI DAİRE",
       "price": "32.500 TL",
       "priceNumeric": 32500,
@@ -60,7 +88,7 @@
       "ilanNo": "1341395640"
     },
     {
-      "id": "sabah-11",
+      "id": "sabah-19",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK İSTANBULPARK 4+1 LÜKS DAİRE",
       "price": "7.800.000 TL",
       "priceNumeric": 7800000,
@@ -74,7 +102,7 @@
       "ilanNo": "1341054733"
     },
     {
-      "id": "sabah-13",
+      "id": "sabah-20",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN GÜLTEPE AVM KARŞISI KİRALIK DÜKKAN",
       "price": "200.000 TL",
       "priceNumeric": 200000,
@@ -88,7 +116,7 @@
       "ilanNo": "1341023087"
     },
     {
-      "id": "sabah-17",
+      "id": "sabah-26",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN YENİCE KÖYÜNDE SATILIK TARLA",
       "price": "1.650.000 TL",
       "priceNumeric": 1650000,
@@ -102,7 +130,7 @@
       "ilanNo": "1340910539"
     },
     {
-      "id": "sabah-23",
+      "id": "sabah-32",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN YENİCE KÖYÜNDE SATILIK TARLA",
       "price": "3.000.000 TL",
       "priceNumeric": 3000000,
@@ -116,7 +144,7 @@
       "ilanNo": "1340850521"
     },
     {
-      "id": "sabah-27",
+      "id": "sabah-36",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KÜMBET'TE KONUT İMARLI SATILIK ARSA",
       "price": "6.750.000 TL",
       "priceNumeric": 6750000,
@@ -130,7 +158,7 @@
       "ilanNo": "1340510765"
     },
     {
-      "id": "sabah-18",
+      "id": "sabah-27",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN TUZLUGÖL'DE LÜKS 3+1 SATILIK DAİRE",
       "price": "4.850.000 TL",
       "priceNumeric": 4850000,
@@ -144,7 +172,7 @@
       "ilanNo": "1340497957"
     },
     {
-      "id": "sabah-29",
+      "id": "sabah-38",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN RTE BULVARI SATILIK TEK TAPU ARSA",
       "price": "130.000.000 TL",
       "priceNumeric": 130000000,
@@ -158,7 +186,7 @@
       "ilanNo": "1340433088"
     },
     {
-      "id": "sabah-35",
+      "id": "sabah-44",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KILAVUZDA 3+1 SATILIK SIFIR DAİRE",
       "price": "4.700.000 TL",
       "priceNumeric": 4700000,
@@ -172,7 +200,7 @@
       "ilanNo": "1339773183"
     },
     {
-      "id": "sabah-38",
+      "id": "sabah-47",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇARŞI YAKINI KİRALIK 2+1 DAİRE",
       "price": "19.500 TL",
       "priceNumeric": 19500,
@@ -186,7 +214,7 @@
       "ilanNo": "1339525247"
     },
     {
-      "id": "sabah-39",
+      "id": "sabah-48",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇAYBOYUNDA SATILIK BAHÇE",
       "price": "3.650.000 TL",
       "priceNumeric": 3650000,
@@ -200,7 +228,7 @@
       "ilanNo": "1339371309"
     },
     {
-      "id": "sabah-44",
+      "id": "sabah-53",
       "title": "TOPRAK GAYRİMENKULDEN İNÖNÜ MAHALLESİNDE 2+1 DAİRE",
       "price": "2.950.000 TL",
       "priceNumeric": 2950000,
@@ -214,7 +242,7 @@
       "ilanNo": "1338855183"
     },
     {
-      "id": "sabah-48",
+      "id": "sabah-57",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇARŞIYA YAKIN SATILIK 2+1 DAİRE",
       "price": "2.450.000 TL",
       "priceNumeric": 2450000,
@@ -228,7 +256,7 @@
       "ilanNo": "1338245348"
     },
     {
-      "id": "sabah-57",
+      "id": "sabah-66",
       "title": "SİVAS TOPRAK GAYRİMENKUL DEN İSTASYON CAD.DEVREN KİRALIK MAĞAZA",
       "price": "1.350.000 TL",
       "priceNumeric": 1350000,
@@ -242,7 +270,7 @@
       "ilanNo": "1337802389"
     },
     {
-      "id": "sabah-60",
+      "id": "sabah-69",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN GÜLTEPEDE 386M2 ARSA VE MÜSTAKİL EV",
       "price": "4.650.000 TL",
       "priceNumeric": 4650000,
@@ -256,7 +284,7 @@
       "ilanNo": "1337486667"
     },
     {
-      "id": "sabah-66",
+      "id": "sabah-75",
       "title": "SİVAS TOPRAK GAYRİMENKUL DEN SELÇUKLU MAH. KİRALIK 2+1 DAİRE",
       "price": "17.000 TL",
       "priceNumeric": 17000,
@@ -270,7 +298,7 @@
       "ilanNo": "1337069706"
     },
     {
-      "id": "sabah-80",
+      "id": "sabah-89",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN BAHTİYAR BOSTAN MAH. 5+1 DUBLEKS",
       "price": "4.250.000 TL",
       "priceNumeric": 4250000,
@@ -284,21 +312,7 @@
       "ilanNo": "1336754199"
     },
     {
-      "id": "sabah-81",
-      "title": "TOPRAK GAYRİMENKULDEN DANİSMENTGAZİDE 3+1 LÜKS DAİRE",
-      "price": "3.400.000 TL",
-      "priceNumeric": 3400000,
-      "location": "Sivas / Merkez",
-      "category": "Satılık",
-      "image": "/ilan-images/95cd98295f91141b.avif",
-      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-toprak-gayrimenkulden-danismentgazide-3-plus1-luks-daire-1336269887/detay",
-      "area": "140 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1336269887"
-    },
-    {
-      "id": "sabah-2",
+      "id": "sabah-7",
       "title": "TOPRAK GAYRİMENKULDEN AYDOĞAN MAHALLESİNDE SATILIK 3+1 DAİRE",
       "price": "3.300.000 TL",
       "priceNumeric": 3300000,
@@ -312,7 +326,7 @@
       "ilanNo": "1336132752"
     },
     {
-      "id": "sabah-3",
+      "id": "sabah-8",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN DÖRTEYLÜL MH. SATILIK 3+1 DAİRE",
       "price": "2.750.000 TL",
       "priceNumeric": 2750000,
@@ -326,7 +340,7 @@
       "ilanNo": "1336076318"
     },
     {
-      "id": "sabah-7",
+      "id": "sabah-16",
       "title": "SİVAS TOPRAKGAYRİ­MENKUL'DEN VEFA KONUTLARINDA SATILIK 2+1 DAİRE",
       "price": "2.690.000 TL",
       "priceNumeric": 2690000,
@@ -340,7 +354,7 @@
       "ilanNo": "1335652259"
     },
     {
-      "id": "sabah-4",
+      "id": "sabah-11",
       "title": "TOPRAK GAYRİMENKULDEN HUZUR MAHALLESİNDE 2+1 SATILIK DAİRE",
       "price": "3.195.000 TL",
       "priceNumeric": 3195000,
@@ -354,7 +368,7 @@
       "ilanNo": "1335427718"
     },
     {
-      "id": "sabah-16",
+      "id": "sabah-25",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN M.AKİF ERSOY MAH.CADDE ÜZERİ 3+1",
       "price": "3.950.000 TL",
       "priceNumeric": 3950000,
@@ -368,7 +382,7 @@
       "ilanNo": "1334720367"
     },
     {
-      "id": "sabah-24",
+      "id": "sabah-33",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN DEVREN KİRALIK OKEY SALONU & CAFE",
       "price": "1.980.000 TL",
       "priceNumeric": 1980000,
@@ -382,7 +396,7 @@
       "ilanNo": "1334502344"
     },
     {
-      "id": "sabah-28",
+      "id": "sabah-37",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KLAVUZ MAHALLESİNDE LÜX SATILIK 3+1",
       "price": "5.500.000 TL",
       "priceNumeric": 5500000,
@@ -396,7 +410,7 @@
       "ilanNo": "1334461800"
     },
     {
-      "id": "sabah-26",
+      "id": "sabah-35",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN AKDEĞİRMEN,DE KİRALIK 3+1 DAİRE",
       "price": "23.000 TL",
       "priceNumeric": 23000,
@@ -410,7 +424,7 @@
       "ilanNo": "1334446523"
     },
     {
-      "id": "sabah-25",
+      "id": "sabah-34",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN ALİBABA MAHALLESİNDE SATILIK 3+1",
       "price": "2.470.000 TL",
       "priceNumeric": 2470000,
@@ -424,7 +438,7 @@
       "ilanNo": "1334430790"
     },
     {
-      "id": "sabah-32",
+      "id": "sabah-41",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN HUZUR. MAH KİRALIK 3+1 FIRSAT DAİRE",
       "price": "24.000 TL",
       "priceNumeric": 24000,
@@ -438,7 +452,7 @@
       "ilanNo": "1334069992"
     },
     {
-      "id": "sabah-31",
+      "id": "sabah-40",
       "title": "TOPRAK GAYRİMENKULDEN CUMA PAZARI ANA CADDE ÜZERİ SATILIK DÜKKAN",
       "price": "5.500.000 TL",
       "priceNumeric": 5500000,
@@ -452,7 +466,7 @@
       "ilanNo": "1333921772"
     },
     {
-      "id": "sabah-83",
+      "id": "sabah-91",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK YİMPAŞ ÇARŞISI ALTN DÜKKAN",
       "price": "6.250.000 TL",
       "priceNumeric": 6250000,
@@ -466,7 +480,7 @@
       "ilanNo": "1333759474"
     },
     {
-      "id": "sabah-36",
+      "id": "sabah-45",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN EMEK MAH. SATILIK 2+1",
       "price": "2.500.000 TL",
       "priceNumeric": 2500000,
@@ -480,7 +494,7 @@
       "ilanNo": "1333756242"
     },
     {
-      "id": "sabah-46",
+      "id": "sabah-56",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN NUMUNE HAST. YAKINI CADDE ÜZERİ 3+1",
       "price": "4.900.000 TL",
       "priceNumeric": 4900000,
@@ -494,7 +508,7 @@
       "ilanNo": "1332809030"
     },
     {
-      "id": "sabah-61",
+      "id": "sabah-70",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN YENİŞEHİR'DE",
       "price": "3.680.000 TL",
       "priceNumeric": 3680000,
@@ -508,7 +522,7 @@
       "ilanNo": "1331797045"
     },
     {
-      "id": "sabah-73",
+      "id": "sabah-81",
       "title": "TOPRAK GAYRİMENKULDEN ÇAYYURT MAHALLESİNDE TARLA",
       "price": "2.500.000 TL",
       "priceNumeric": 2500000,
@@ -522,7 +536,7 @@
       "ilanNo": "1331789246"
     },
     {
-      "id": "sabah-64",
+      "id": "sabah-72",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN TUZLUGÖL'DE 3+1 SATILIK DAİRELER",
       "price": "4.300.000 TL",
       "priceNumeric": 4300000,
@@ -536,7 +550,7 @@
       "ilanNo": "1331729113"
     },
     {
-      "id": "sabah-52",
+      "id": "sabah-61",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KİRALIK EŞYALI LÜKS 1+1 DAİRE",
       "price": "29.000 TL",
       "priceNumeric": 29000,
@@ -550,7 +564,7 @@
       "ilanNo": "1331016890"
     },
     {
-      "id": "sabah-75",
+      "id": "sabah-84",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SEYRANTEPEDE SATILIK TRİBLEKS DAİRE",
       "price": "19.250.000 TL",
       "priceNumeric": 19250000,
@@ -564,7 +578,7 @@
       "ilanNo": "1330977711"
     },
     {
-      "id": "sabah-22",
+      "id": "sabah-31",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN AHMET TURAN GAZİ MAHALLESİNDE 3+1",
       "price": "4.160.000 TL",
       "priceNumeric": 4160000,
@@ -578,7 +592,7 @@
       "ilanNo": "1328704750"
     },
     {
-      "id": "sabah-43",
+      "id": "sabah-52",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN KILAVUZ MAHALLESİN' DE SATILIK 3+1",
       "price": "5.000.000 TL",
       "priceNumeric": 5000000,
@@ -592,7 +606,7 @@
       "ilanNo": "1327138533"
     },
     {
-      "id": "sabah-50",
+      "id": "sabah-59",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN KILAVUZ MAHALLESİN'DE SATILIK 4+1",
       "price": "6.000.000 TL",
       "priceNumeric": 6000000,
@@ -606,7 +620,7 @@
       "ilanNo": "1327130924"
     },
     {
-      "id": "sabah-42",
+      "id": "sabah-51",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN HAFİK GÖLÜ MANZARALI MUHTEŞEM TARLA",
       "price": "2.100.000 TL",
       "priceNumeric": 2100000,
@@ -620,7 +634,7 @@
       "ilanNo": "1327080767"
     },
     {
-      "id": "sabah-78",
+      "id": "sabah-87",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SIFIR 3+1 MERKEZİ KONUMDA DAİRE",
       "price": "6.500.000 TL",
       "priceNumeric": 6500000,
@@ -634,7 +648,7 @@
       "ilanNo": "1325351695"
     },
     {
-      "id": "sabah-69",
+      "id": "sabah-77",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SIFIR 4+1 MERKEZİ KONUMDA DAİRE",
       "price": "7.000.000 TL",
       "priceNumeric": 7000000,
@@ -648,7 +662,7 @@
       "ilanNo": "1325337370"
     },
     {
-      "id": "sabah-15",
+      "id": "sabah-22",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK DÜKKAN !! FIRSAT FİYAT !!",
       "price": "2.950.000 TL",
       "priceNumeric": 2950000,
@@ -662,7 +676,7 @@
       "ilanNo": "1322939410"
     },
     {
-      "id": "sabah-37",
+      "id": "sabah-46",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK ÇARŞI YAKINI 4+1 DAİRE",
       "price": "4.450.000 TL",
       "priceNumeric": 4450000,
@@ -676,7 +690,7 @@
       "ilanNo": "1321378436"
     },
     {
-      "id": "sabah-41",
+      "id": "sabah-50",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN M.AKİFTE 5+2 DUBLEKS DAİRE",
       "price": "3.800.000 TL",
       "priceNumeric": 3800000,
@@ -690,7 +704,7 @@
       "ilanNo": "1321269788"
     },
     {
-      "id": "sabah-59",
+      "id": "sabah-68",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN CUMA PAZARI ALTI KÖŞE BAŞI DÜKKAN",
       "price": "3.700.000 TL",
       "priceNumeric": 3700000,
@@ -704,7 +718,7 @@
       "ilanNo": "1320527802"
     },
     {
-      "id": "sabah-51",
+      "id": "sabah-60",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ARA KAT SIFIR 3+1 DAİRE",
       "price": "4.050.000 TL",
       "priceNumeric": 4050000,
@@ -718,7 +732,7 @@
       "ilanNo": "1320522929"
     },
     {
-      "id": "sabah-56",
+      "id": "sabah-65",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK NET 140m2 LÜKS 3+1 DAİRE",
       "price": "6.400.000 TL",
       "priceNumeric": 6400000,
@@ -732,7 +746,7 @@
       "ilanNo": "1320342177"
     },
     {
-      "id": "sabah-45",
+      "id": "sabah-54",
       "title": "TOPRAK GAYRİMENKULDEN MERKEZ KAZANCILARDA SATILIK 4+1 DAİRE",
       "price": "3.425.000 TL",
       "priceNumeric": 3425000,
@@ -746,7 +760,7 @@
       "ilanNo": "1320128400"
     },
     {
-      "id": "sabah-55",
+      "id": "sabah-64",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇARŞI YA YAKIN FULL YAPILI DUBLEKS",
       "price": "4.650.000 TL",
       "priceNumeric": 4650000,
@@ -760,7 +774,7 @@
       "ilanNo": "1319852352"
     },
     {
-      "id": "sabah-12",
+      "id": "sabah-24",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ESENYURT TA SATILIK VİLLA ARSASI",
       "price": "4.900.000 TL",
       "priceNumeric": 4900000,
@@ -774,7 +788,7 @@
       "ilanNo": "1318388954"
     },
     {
-      "id": "sabah-8",
+      "id": "sabah-23",
       "title": "SİVAS TOPRAK GAYRİMENKUL SATILIK ESENYURT TA VİLLA ARSASI",
       "price": "5.000.000 TL",
       "priceNumeric": 5000000,
@@ -788,7 +802,7 @@
       "ilanNo": "1318334076"
     },
     {
-      "id": "sabah-53",
+      "id": "sabah-62",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN LONCA EVLERİNDE 1+1 SATILIK DAİRE",
       "price": "3.850.000 TL",
       "priceNumeric": 3850000,
@@ -802,7 +816,7 @@
       "ilanNo": "1315510337"
     },
     {
-      "id": "sabah-71",
+      "id": "sabah-79",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN LONCA EVLERİNDE SATILIK DAİRE",
       "price": "7.500.000 TL",
       "priceNumeric": 7500000,
@@ -816,7 +830,7 @@
       "ilanNo": "1314571777"
     },
     {
-      "id": "sabah-74",
+      "id": "sabah-83",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN LONCA EVLERİNDE SATILIK DAİRELER",
       "price": "3.850.000 TL",
       "priceNumeric": 3850000,
@@ -830,7 +844,7 @@
       "ilanNo": "1314555397"
     },
     {
-      "id": "sabah-58",
+      "id": "sabah-67",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN İSTASYON CAD.SATILIK DAİRE",
       "price": "3.150.000 TL",
       "priceNumeric": 3150000,
@@ -844,7 +858,7 @@
       "ilanNo": "1313747448"
     },
     {
-      "id": "sabah-30",
+      "id": "sabah-39",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN LONCA EVLERİNDE SATILIK DAİRE",
       "price": "5.500.000 TL",
       "priceNumeric": 5500000,
@@ -858,7 +872,7 @@
       "ilanNo": "1311239948"
     },
     {
-      "id": "sabah-34",
+      "id": "sabah-43",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN GÜLTEPEDE SATILIK 1+1 HAZIR DAİRELR",
       "price": "3.200.000 TL",
       "priceNumeric": 3200000,
@@ -872,7 +886,7 @@
       "ilanNo": "1311045939"
     },
     {
-      "id": "sabah-49",
+      "id": "sabah-58",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK MERKEZİ KONUMDA GENİŞ 3+1",
       "price": "3.150.000 TL",
       "priceNumeric": 3150000,
@@ -886,7 +900,7 @@
       "ilanNo": "1309631491"
     },
     {
-      "id": "sabah-72",
+      "id": "sabah-80",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ANA YOLA SIFIR ARSA FIRSATI",
       "price": "23.000.000 TL",
       "priceNumeric": 23000000,
@@ -900,7 +914,7 @@
       "ilanNo": "1308509834"
     },
     {
-      "id": "sabah-40",
+      "id": "sabah-49",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KIZILKAVRAZ,DA TEK TAPU FIRSAT TARLA",
       "price": "5.500.000 TL",
       "priceNumeric": 5500000,
@@ -914,7 +928,7 @@
       "ilanNo": "1305326532"
     },
     {
-      "id": "sabah-47",
+      "id": "sabah-55",
       "title": "SİVAS TOPRAK GAYRIMENKUL'DEN GÖKMEDRESE MAH. SATILIK 3+1 DAİRE",
       "price": "3.050.000 TL",
       "priceNumeric": 3050000,
@@ -928,7 +942,7 @@
       "ilanNo": "1297522067"
     },
     {
-      "id": "sabah-76",
+      "id": "sabah-85",
       "title": "Sivas Toprak Gayrimenkul den KIRŞEHİR ÇİÇEKDAĞI demirlide tarla.",
       "price": "1.599.000 TL",
       "priceNumeric": 1599000,
@@ -942,7 +956,7 @@
       "ilanNo": "1296956848"
     },
     {
-      "id": "sabah-33",
+      "id": "sabah-42",
       "title": "SİVAS TOPRAK GAYRİMENKU'DEN GÖKMEDRESE MAH. SATILIK 3+1 DAİRE",
       "price": "2.800.000 TL",
       "priceNumeric": 2800000,
@@ -956,7 +970,21 @@
       "ilanNo": "1287311656"
     },
     {
-      "id": "sabah-63",
+      "id": "sabah-9",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN ANA YOLA YAKIN YATIRIMLIK TARLA",
+      "price": "1.000.000 TL",
+      "priceNumeric": 1000000,
+      "location": "Sivas / Merkez",
+      "category": "Arsa",
+      "image": "/ilan-images/150b5a2922bad397.avif",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-ana-yola-yakin-yatirimlik-tarla-1285078342/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1285078342"
+    },
+    {
+      "id": "sabah-71",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN İMARA SIFIR 430m2 HOBİ BAHÇESİ",
       "price": "1.270.000 TL",
       "priceNumeric": 1270000,
@@ -970,7 +998,7 @@
       "ilanNo": "1284729915"
     },
     {
-      "id": "sabah-84",
+      "id": "sabah-10",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN 355m² ESENYURT'TA ARSA",
       "price": "1.740.000 TL",
       "priceNumeric": 1740000,
@@ -984,7 +1012,7 @@
       "ilanNo": "1284062701"
     },
     {
-      "id": "sabah-85",
+      "id": "sabah-14",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN 307m² ESENYURT'TA ARSA",
       "price": "1.450.000 TL",
       "priceNumeric": 1450000,
@@ -998,7 +1026,21 @@
       "ilanNo": "1284044723"
     },
     {
-      "id": "sabah-79",
+      "id": "sabah-6",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN MERAKÜM TOKİ'DE SATILIK DAİRE",
+      "price": "1.675.000 TL",
+      "priceNumeric": 1675000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/8bfc0b9040e12029.jpg",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-merakum-toki-de-satilik-daire-1271696047/detay",
+      "area": "95 m²",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1271696047"
+    },
+    {
+      "id": "sabah-88",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN YATIRIMLIK TİCARİ İMARLI ARSA",
       "price": "1.125.000 TL",
       "priceNumeric": 1125000,
@@ -1012,7 +1054,21 @@
       "ilanNo": "1271605592"
     },
     {
-      "id": "sabah-14",
+      "id": "sabah-5",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN SICAK ÇERMİKTE İMARLI SATILIK BAHÇE",
+      "price": "1.980.000 TL",
+      "priceNumeric": 1980000,
+      "location": "Sivas / Yıldızeli",
+      "category": "Arsa",
+      "image": "/ilan-images/fca77ee36075dd78.avif",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-sicak-cermikte-imarli-satilik-bahce-1268492390/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1268492390"
+    },
+    {
+      "id": "sabah-21",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ACİLLL SATILIK GÖĞDÜN de TARLA...",
       "price": "1.999.000 TL",
       "priceNumeric": 1999000,
@@ -1026,7 +1082,7 @@
       "ilanNo": "1267964022"
     },
     {
-      "id": "sabah-21",
+      "id": "sabah-30",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KARDEŞLERDE EVİ İÇİNDE SATILIK BAHÇE",
       "price": "775.000 TL",
       "priceNumeric": 775000,
@@ -1040,7 +1096,7 @@
       "ilanNo": "1264801703"
     },
     {
-      "id": "sabah-82",
+      "id": "sabah-90",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN GÖYDÜN DE SATILIK TARLALAR",
       "price": "1.700.000 TL",
       "priceNumeric": 1700000,
@@ -1054,7 +1110,21 @@
       "ilanNo": "1260677261"
     },
     {
-      "id": "sabah-77",
+      "id": "sabah-4",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN KAÇIRILMAYACAK FIRSAT HOBİ BAHÇESİ",
+      "price": "3.600.000 TL",
+      "priceNumeric": 3600000,
+      "location": "Sivas / Merkez",
+      "category": "Arsa",
+      "image": "/ilan-images/0013725777b3d209.jpg",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-kacirilmayacak-firsat-hobi-bahcesi-1253576230/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1253576230"
+    },
+    {
+      "id": "sabah-86",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SATILIK KANGAL AVŞARÖRENDE TARLA...",
       "price": "3.499.000 TL",
       "priceNumeric": 3499000,
@@ -1068,7 +1138,7 @@
       "ilanNo": "1249885902"
     },
     {
-      "id": "sabah-19",
+      "id": "sabah-28",
       "title": "SİVAS TOPRAK GAYRİMENKUL DEN MERKEZE YAKIN TAŞLIDEREDE BAHÇE",
       "price": "900.000 TL",
       "priceNumeric": 900000,
@@ -1082,7 +1152,7 @@
       "ilanNo": "1247706064"
     },
     {
-      "id": "sabah-54",
+      "id": "sabah-63",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN GÖYDÜNDE SATILIK TARLA",
       "price": "1.825.000 TL",
       "priceNumeric": 1825000,
@@ -1096,7 +1166,7 @@
       "ilanNo": "1244107255"
     },
     {
-      "id": "sabah-62",
+      "id": "sabah-74",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SICAK ÇERMİKTE TEK TAPU ARSA",
       "price": "7.000.000 TL",
       "priceNumeric": 7000000,
@@ -1110,7 +1180,7 @@
       "ilanNo": "1243857622"
     },
     {
-      "id": "sabah-67",
+      "id": "sabah-82",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇUKURBELENDE YOL ÜSTÜ TEK TAPU TARLA",
       "price": "4.660.000 TL",
       "priceNumeric": 4660000,
@@ -1124,7 +1194,21 @@
       "ilanNo": "1236031989"
     },
     {
-      "id": "sabah-20",
+      "id": "sabah-13",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇUKURBELENDE TEK TAPU SATILIK TARLA",
+      "price": "2.050.000 TL",
+      "priceNumeric": 2050000,
+      "location": "Sivas / Merkez",
+      "category": "Arsa",
+      "image": "/ilan-images/1effb932a1ff9394.jpg",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-cukurbelende-tek-tapu-satilik-tarla-1234076351/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1234076351"
+    },
+    {
+      "id": "sabah-29",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN PORSUK TA ANA YOLA YAKIN TARLA",
       "price": "3.800.000 TL",
       "priceNumeric": 3800000,
@@ -1138,7 +1222,7 @@
       "ilanNo": "1222358202"
     },
     {
-      "id": "sabah-65",
+      "id": "sabah-73",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN MERKEZE YAKIN YOL KENARI TARLA",
       "price": "6.400.000 TL",
       "priceNumeric": 6400000,
@@ -1152,7 +1236,7 @@
       "ilanNo": "1221751480"
     },
     {
-      "id": "sabah-68",
+      "id": "sabah-76",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN PAŞABAHÇE İLERİSİ SATILIK TARLA",
       "price": "10.000.000 TL",
       "priceNumeric": 10000000,
@@ -1180,7 +1264,7 @@
       "ilanNo": "1207562186"
     },
     {
-      "id": "sabah-70",
+      "id": "sabah-78",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN MEHMETAKİFTE SATILIK FIRSAT DÜKKAN",
       "price": "8.500.000 TL",
       "priceNumeric": 8500000,
