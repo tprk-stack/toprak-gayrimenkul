@@ -53,7 +53,11 @@ const STATS = [
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgavrwgb'
 
+// Ekranda gosterilen adres (bina ayrinti dahil)
 const ADRES = 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez'
+// Harita uygulamasina gonderilen adres: bina adi haritada sonucu bulamayip
+// karistirdigi icin ("Emmioğlu Apt. Altı") disarida birakildi.
+const HARITA_ADRESI = 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Sivas Merkez'
 
 const CONTACT_INFO: Array<{ label: string; value: string; tel?: string; geo?: boolean }> = [
   { label: 'Telefon', value: '0 (346) 221 11 11', tel: '03462211111' },
@@ -72,7 +76,7 @@ export default function App() {
   function haritaYedegi() {
     if (geoTimer.current) window.clearTimeout(geoTimer.current)
     geoTimer.current = window.setTimeout(() => {
-      window.location.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADRES)}`
+      window.location.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(HARITA_ADRESI)}`
     }, 1600)
   }
 
@@ -373,7 +377,7 @@ export default function App() {
                     </a>
                   ) : c.geo ? (
                     <a
-                      href={`geo:0,0?q=${encodeURIComponent(c.value)}`}
+                      href={`geo:0,0?q=${encodeURIComponent(HARITA_ADRESI)}`}
                       onClick={haritaYedegi}
                       className="text-sm transition-colors duration-200"
                       style={{ color: '#f0ece4' }}
