@@ -340,7 +340,6 @@ export default function App() {
               {[
                 { label: 'Telefon', value: '0346 221 11 11' },
                 { label: 'Cep', value: '0535 664 00 74' },
-                { label: 'E-posta', value: 'info@toprakgayrimenkul.com.tr' },
                 { label: 'Adres', value: 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez' },
                 { label: 'Çalışma Saatleri', value: 'Pzt – Cum 09:00 – 18:30 · Cmt randevuyla' },
               ].map(c => (
@@ -356,7 +355,7 @@ export default function App() {
               {([
                 { id: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yılmaz', autoComplete: 'name' },
                 { id: 'phone', label: 'Telefon Numarası', type: 'tel', placeholder: '05XX XXX XX XX', autoComplete: 'tel', inputMode: 'tel' },
-                { id: 'email', label: 'E-posta Adresi', type: 'email', placeholder: 'ahmet@example.com', autoComplete: 'email' },
+                { id: 'email', label: 'E-posta Adresiniz', type: 'email', placeholder: 'ahmet@example.com', autoComplete: 'email' },
               ] as Array<{
                 id: 'name' | 'phone' | 'email'
                 label: string
