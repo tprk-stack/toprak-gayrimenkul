@@ -52,6 +52,13 @@ const STATS = [
 ]
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgavrwgb'
+
+const CONTACT_INFO: Array<{ label: string; value: string; tel?: string }> = [
+  { label: 'Telefon', value: '0(346) 221 11 11', tel: '03462211111' },
+  { label: 'Cep', value: '0(535) 664 00 74', tel: '05356640074' },
+  { label: 'Adres', value: 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez' },
+  { label: 'Çalışma Saatleri', value: 'Pzt – Cum 09:00 – 18:30 · Cmt randevuyla' },
+]
 const EMPTY_FORM = { name: '', phone: '', email: '', message: '' }
 
 export default function App() {
@@ -337,15 +344,18 @@ export default function App() {
               Satmayı, almayı ya da kiralamayı düşünüyor musunuz? Sivas gayrimenkul piyasası hakkında merak ettiğiniz her şeyi danışmanlarımızla konuşabilirsiniz. İlk görüşme tamamen ücretsizdir.
             </p>
             <div className="flex flex-col gap-6">
-              {[
-                { label: 'Telefon', value: '0346 221 11 11' },
-                { label: 'Cep', value: '0535 664 00 74' },
-                { label: 'Adres', value: 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez' },
-                { label: 'Çalışma Saatleri', value: 'Pzt – Cum 09:00 – 18:30 · Cmt randevuyla' },
-              ].map(c => (
+              {CONTACT_INFO.map(c => (
                 <div key={c.label}>
                   <div className="text-xs tracking-widest uppercase mb-1" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>{c.label}</div>
-                  <div className="text-sm" style={{ color: '#f0ece4' }}>{c.value}</div>
+                  {c.tel ? (
+                    <a href={`tel:${c.tel}`} className="text-sm transition-colors duration-200" style={{ color: '#f0ece4' }}
+                      onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#c8a96e'}
+                      onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#f0ece4'}>
+                      {c.value}
+                    </a>
+                  ) : (
+                    <div className="text-sm" style={{ color: '#f0ece4' }}>{c.value}</div>
+                  )}
                 </div>
               ))}
             </div>
@@ -394,7 +404,12 @@ export default function App() {
                 inputMode?: 'tel'
               }>).map(f => (
                 <div key={f.id}>
-                  <label htmlFor={f.id} className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>{f.label}</label>
+                  <label htmlFor={f.id} className="flex items-baseline gap-2 text-xs tracking-widest uppercase mb-2" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>
+                    {f.label}
+                    {f.id === 'email' && (
+                      <span className="text-[10px]" style={{ color: '#5d574f', letterSpacing: '0.2em' }}>Opsiyonel</span>
+                    )}
+                  </label>
                   <input
                     type={f.type}
                     id={f.id}
