@@ -54,8 +54,8 @@ const STATS = [
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgavrwgb'
 
 const CONTACT_INFO: Array<{ label: string; value: string; tel?: string }> = [
-  { label: 'Telefon', value: '0(346) 221 11 11', tel: '03462211111' },
-  { label: 'Cep', value: '0(535) 664 00 74', tel: '05356640074' },
+  { label: 'Telefon', value: '0 (346) 221 11 11', tel: '03462211111' },
+  { label: 'Cep', value: '0 (535) 664 00 74', tel: '05356640074' },
   { label: 'Adres', value: 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez' },
   { label: 'Çalışma Saatleri', value: 'Pzt – Cum 09:00 – 18:30 · Cmt randevuyla' },
 ]
