@@ -351,6 +351,35 @@ export default function App() {
             </div>
           </div>
           <div>
+            {submitted ? (
+              // Basarili gonderim: form yerine tikli onay paneli.
+              // Mobilde ekranin gorunur alaninda (formun bulundugu yerde) belirir.
+              <div role="status" aria-live="polite" className="flex flex-col items-start gap-5 py-4">
+                <div
+                  className="w-14 h-14 flex items-center justify-center rounded-full flex-shrink-0"
+                  style={{ background: 'rgba(34,197,94,0.12)', border: '1px solid rgba(34,197,94,0.5)' }}
+                >
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#4ade80" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                </div>
+                <div className="w-10 h-px" style={{ background: '#c8a96e' }} />
+                <h3 className="font-display text-3xl font-light italic" style={{ color: '#f0ece4' }}>Teşekkürler.</h3>
+                <p className="text-sm" style={{ color: '#c4bfb5', lineHeight: 1.75 }}>
+                  Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => { setSubmitted(false); setSendError(false) }}
+                  className="px-6 py-3 text-xs tracking-widest uppercase transition-colors duration-200"
+                  style={{ border: '1px solid rgba(200,169,110,0.4)', color: '#c8a96e' }}
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = '#c8a96e'}
+                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(200,169,110,0.4)'}
+                >
+                  Yeni mesaj gönder
+                </button>
+              </div>
+            ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate={false}>
               {([
                 { id: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yılmaz', autoComplete: 'name' },
@@ -416,15 +445,6 @@ export default function App() {
                 {sending ? 'Gönderiliyor...' : 'Mesaj Gönder'}
               </button>
 
-              {submitted && (
-                <div role="status" aria-live="polite" className="flex items-start gap-3">
-                  <div className="w-10 h-px mt-2 flex-shrink-0" style={{ background: '#c8a96e' }} />
-                  <p className="text-sm" style={{ color: '#c4bfb5', lineHeight: 1.7 }}>
-                    Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.
-                  </p>
-                </div>
-              )}
-
               {sendError && (
                 <div role="alert" className="flex items-start gap-3">
                   <div className="w-10 h-px mt-2 flex-shrink-0" style={{ background: '#b4523f' }} />
@@ -434,6 +454,7 @@ export default function App() {
                 </div>
               )}
             </form>
+            )}
           </div>
         </div>
       </section>
