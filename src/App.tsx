@@ -51,14 +51,52 @@ const STATS = [
   { value: '20 yıl', label: 'Sivas\'ta Deneyim' },
 ]
 
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgavrwgb'
+const EMPTY_FORM = { name: '', phone: '', email: '', message: '' }
+
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const [formState, setFormState] = useState({ name: '', email: '', message: '' })
+  const [formState, setFormState] = useState(EMPTY_FORM)
+  const [sending, setSending] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [sendError, setSendError] = useState(false)
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    // Cift gonderimi engelle
+    if (sending) return
+
+    // E-posta girildiyse bicim kontrolu (HTML5 pattern)
+    const email = formState.email.trim()
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) {
+      setSendError(true)
+      return
+    }
+
+    setSending(true)
+    setSendError(false)
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formState.name.trim(),
+          phone: formState.phone.trim(),
+          email,
+          message: formState.message.trim(),
+        }),
+      })
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      setFormState(EMPTY_FORM)
+      setSubmitted(true)
+    } catch {
+      setSendError(true)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -314,57 +352,89 @@ export default function App() {
             </div>
           </div>
           <div>
-            {submitted ? (
-              <div className="h-full flex flex-col items-start justify-center gap-4 py-16">
-                <div className="w-10 h-px" style={{ background: '#c8a96e' }} />
-                <h3 className="font-display text-3xl font-light italic" style={{ color: '#f0ece4' }}>Teşekkürler.</h3>
-                <p className="text-sm" style={{ color: '#8a8478' }}>Danışmanımız en kısa sürede sizinle iletişime geçecek.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                {[
-                  { id: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yılmaz' },
-                  { id: 'email', label: 'E-posta Adresi', type: 'email', placeholder: 'ahmet@example.com' },
-                ].map(f => (
-                  <div key={f.id}>
-                    <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>{f.label}</label>
-                    <input
-                      type={f.type}
-                      id={f.id}
-                      required
-                      placeholder={f.placeholder}
-                      value={formState[f.id as keyof typeof formState]}
-                      onChange={e => setFormState(s => ({ ...s, [f.id]: e.target.value }))}
-                      className="w-full px-4 py-3 text-sm outline-none transition-colors duration-200"
-                      style={{ background: '#1a1916', border: '1px solid rgba(200,169,110,0.2)', color: '#f0ece4' }}
-                      onFocus={e => (e.target as HTMLElement).style.borderColor = '#c8a96e'}
-                      onBlur={e => (e.target as HTMLElement).style.borderColor = 'rgba(200,169,110,0.2)'}
-                    />
-                  </div>
-                ))}
-                <div>
-                  <label className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>Mesajınız</label>
-                  <textarea
-                    required
-                    rows={5}
-                    placeholder="Gayrimenkul ihtiyacınızı bize anlatın…"
-                    value={formState.message}
-                    onChange={e => setFormState(s => ({ ...s, message: e.target.value }))}
-                    className="w-full px-4 py-3 text-sm outline-none resize-none transition-colors duration-200"
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5" noValidate={false}>
+              {([
+                { id: 'name', label: 'Ad Soyad', type: 'text', placeholder: 'Ahmet Yılmaz', autoComplete: 'name' },
+                { id: 'phone', label: 'Telefon Numarası', type: 'tel', placeholder: '05XX XXX XX XX', autoComplete: 'tel', inputMode: 'tel' },
+                { id: 'email', label: 'E-posta Adresi', type: 'email', placeholder: 'ahmet@example.com', autoComplete: 'email' },
+              ] as Array<{
+                id: 'name' | 'phone' | 'email'
+                label: string
+                type: 'text' | 'tel' | 'email'
+                placeholder: string
+                autoComplete: 'name' | 'tel' | 'email'
+                inputMode?: 'tel'
+              }>).map(f => (
+                <div key={f.id}>
+                  <label htmlFor={f.id} className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>{f.label}</label>
+                  <input
+                    type={f.type}
+                    id={f.id}
+                    name={f.id}
+                    required={f.id !== 'email'}
+                    autoComplete={f.autoComplete}
+                    inputMode={f.inputMode}
+                    pattern={f.id === 'email' ? '[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}' : undefined}
+                    placeholder={f.placeholder}
+                    value={formState[f.id as keyof typeof formState]}
+                    onChange={e => setFormState(s => ({ ...s, [f.id]: e.target.value }))}
+                    className="w-full px-4 py-3 text-sm outline-none transition-colors duration-200"
                     style={{ background: '#1a1916', border: '1px solid rgba(200,169,110,0.2)', color: '#f0ece4' }}
                     onFocus={e => (e.target as HTMLElement).style.borderColor = '#c8a96e'}
                     onBlur={e => (e.target as HTMLElement).style.borderColor = 'rgba(200,169,110,0.2)'}
                   />
                 </div>
-                <button type="submit"
-                  className="mt-2 w-full py-4 text-sm tracking-widest uppercase transition-all duration-200"
-                  style={{ background: '#c8a96e', color: '#0f0e0d', fontWeight: 500, letterSpacing: '0.15em' }}
-                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#d4b87a'}
-                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#c8a96e'}>
-                  Mesaj Gönder
-                </button>
-              </form>
-            )}
+              ))}
+              <div>
+                <label htmlFor="message" className="block text-xs tracking-widest uppercase mb-2" style={{ color: '#8a8478', letterSpacing: '0.12em' }}>Mesajınız</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows={5}
+                  placeholder="Gayrimenkul ihtiyacınızı bize anlatın..."
+                  value={formState.message}
+                  onChange={e => setFormState(s => ({ ...s, message: e.target.value }))}
+                  className="w-full px-4 py-3 text-sm outline-none resize-none transition-colors duration-200"
+                  style={{ background: '#1a1916', border: '1px solid rgba(200,169,110,0.2)', color: '#f0ece4' }}
+                  onFocus={e => (e.target as HTMLElement).style.borderColor = '#c8a96e'}
+                  onBlur={e => (e.target as HTMLElement).style.borderColor = 'rgba(200,169,110,0.2)'}
+                />
+              </div>
+              <button type="submit"
+                disabled={sending}
+                aria-busy={sending}
+                className="mt-2 w-full py-4 text-sm tracking-widest uppercase transition-all duration-200"
+                style={{
+                  background: sending ? '#8a7a52' : '#c8a96e',
+                  color: '#0f0e0d',
+                  fontWeight: 500,
+                  letterSpacing: '0.15em',
+                  cursor: sending ? 'default' : 'pointer',
+                }}
+                onMouseEnter={e => { if (!sending) (e.currentTarget as HTMLElement).style.background = '#d4b87a' }}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = sending ? '#8a7a52' : '#c8a96e'}>
+                {sending ? 'Gönderiliyor...' : 'Mesaj Gönder'}
+              </button>
+
+              {submitted && (
+                <div role="status" aria-live="polite" className="flex items-start gap-3">
+                  <div className="w-10 h-px mt-2 flex-shrink-0" style={{ background: '#c8a96e' }} />
+                  <p className="text-sm" style={{ color: '#c4bfb5', lineHeight: 1.7 }}>
+                    Mesajınız başarıyla gönderildi. En kısa sürede sizinle iletişime geçeceğiz.
+                  </p>
+                </div>
+              )}
+
+              {sendError && (
+                <div role="alert" className="flex items-start gap-3">
+                  <div className="w-10 h-px mt-2 flex-shrink-0" style={{ background: '#b4523f' }} />
+                  <p className="text-sm" style={{ color: '#d99a8c', lineHeight: 1.7 }}>
+                    Mesaj gönderilemedi. Lütfen tekrar deneyin.
+                  </p>
+                </div>
+              )}
+            </form>
           </div>
         </div>
       </section>
