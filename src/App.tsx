@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import ListingsSection from './components/ListingsSection'
 
 const NAV_LINKS = ['Projeler', 'Hizmetler', 'Hakkımızda', 'Referanslar', 'İletişim']
@@ -53,15 +53,33 @@ const STATS = [
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mgavrwgb'
 
-const CONTACT_INFO: Array<{ label: string; value: string; tel?: string }> = [
+const ADRES = 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez'
+
+const CONTACT_INFO: Array<{ label: string; value: string; tel?: string; geo?: boolean }> = [
   { label: 'Telefon', value: '0 (346) 221 11 11', tel: '03462211111' },
   { label: 'Cep', value: '0 (535) 664 00 74', tel: '05356640074' },
-  { label: 'Adres', value: 'Mehmet Akif Ersoy Mah. Karaağaç Cad. No:5, Emmioğlu Apt. Altı, Sivas Merkez' },
+  { label: 'Adres', value: ADRES, geo: true },
   { label: 'Çalışma Saatleri', value: 'Pzt – Cum 09:00 – 18:30 · Cmt randevuyla' },
 ]
 const EMPTY_FORM = { name: '', phone: '', email: '', message: '' }
 
 export default function App() {
+  const geoTimer = useRef<number | null>(null)
+
+  // geo: baglantisi mobilde yerel harita uygulamasini acar
+  // (iOS -> Apple Maps, Android -> Google Maps). Masaustunde acilmazsa
+  // 1,6 sn sonra Google Haritalar web surumune yonlendirilir.
+  function haritaYedegi() {
+    if (geoTimer.current) window.clearTimeout(geoTimer.current)
+    geoTimer.current = window.setTimeout(() => {
+      window.location.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(ADRES)}`
+    }, 1600)
+  }
+
+  useEffect(() => () => {
+    if (geoTimer.current) window.clearTimeout(geoTimer.current)
+  }, [])
+
   const [menuOpen, setMenuOpen] = useState(false)
   const [formState, setFormState] = useState(EMPTY_FORM)
   const [sending, setSending] = useState(false)
@@ -351,6 +369,17 @@ export default function App() {
                     <a href={`tel:${c.tel}`} className="text-sm transition-colors duration-200" style={{ color: '#f0ece4' }}
                       onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#c8a96e'}
                       onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#f0ece4'}>
+                      {c.value}
+                    </a>
+                  ) : c.geo ? (
+                    <a
+                      href={`geo:0,0?q=${encodeURIComponent(c.value)}`}
+                      onClick={haritaYedegi}
+                      className="text-sm transition-colors duration-200"
+                      style={{ color: '#f0ece4' }}
+                      onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#c8a96e'}
+                      onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#f0ece4'}
+                    >
                       {c.value}
                     </a>
                   ) : (
