@@ -1,8 +1,36 @@
 {
-  "updatedAt": "2026-09-29T07:03:50.961Z",
+  "updatedAt": "2026-09-30T07:01:03.398Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 98,
+  "count": 100,
   "listings": [
+    {
+      "id": "ilan-79f53f2138b6",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN Gazi lisesi yakını cadde üzeri \"2+1\"",
+      "price": "3.199.000 TL",
+      "priceNumeric": 3199000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/a2ffd5b8e0e30c9c.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-gazi-lisesi-yakini-cadde-uzeri-2-plus1-1343053902/detay",
+      "area": "110 m²",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1343053902"
+    },
+    {
+      "id": "ilan-5576ce05ec2f",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇUKURBELENDE ANA YOL KENARI TARLA",
+      "price": "5.850.000 TL",
+      "priceNumeric": 5850000,
+      "location": "Sivas / Merkez",
+      "category": "Arsa",
+      "image": "/ilan-images/3162de47e2ca7a76.avif",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-cukurbelende-ana-yol-kenari-tarla-1342960225/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1342960225"
+    },
     {
       "id": "ilan-6cc3d6403f80",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN TUZLUGÖLDE SATILIK 3+1 LÜKS DAİRELER",
