@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-09-30T07:01:03.398Z",
+  "updatedAt": "2026-10-01T07:04:49.225Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 100,
+  "count": 92,
   "listings": [
     {
       "id": "ilan-79f53f2138b6",
@@ -62,11 +62,11 @@
     {
       "id": "ilan-50460df4ab7f",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ŞEYHŞAMİLDE ULTRA LÜKS 4+1 DAİRE",
-      "price": "5.300.000 TL",
-      "priceNumeric": 5300000,
+      "price": "5.100.000 TL",
+      "priceNumeric": 5100000,
       "location": "Sivas / Merkez",
       "category": "Satılık",
-      "image": "/ilan-images/4c24c7fca37b406a.avif",
+      "image": "/ilan-images/5128a28d7df07acf.avif",
       "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-seyhsamilde-ultra-luks-4-plus1-daire-1342255157/detay",
       "area": "160 m²",
       "photos": [],
@@ -145,14 +145,14 @@
     },
     {
       "id": "ilan-c983f3471425",
-      "title": "Kaçırılmayacak Fırsat! 2+1 Yok Emsalsiz Konumda Arsa Sahibinden Açık Otopark",
-      "price": "3.195.000 TL",
-      "priceNumeric": 3195000,
+      "title": "SİVAS TOPRAK GAYRİMENKULDAN KARŞIYAKADA SATILIK FIRSAT ARSA",
+      "price": "3.650.000 TL",
+      "priceNumeric": 3650000,
       "location": "Sivas / Merkez",
       "category": "Arsa",
-      "image": "",
+      "image": "/ilan-images/a62917ae54c5ecba.avif",
       "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkuldan-karsiyakada-satilik-firsat-arsa-1341586527/detay",
-      "area": "95 m²",
+      "area": "",
       "photos": [],
       "desc": "",
       "ilanNo": "1341586527"
@@ -300,8 +300,8 @@
     {
       "id": "ilan-38681872c335",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇARŞI YAKINI KİRALIK 2+1 DAİRE",
-      "price": "19.500 TL",
-      "priceNumeric": 19500,
+      "price": "18.500 TL",
+      "priceNumeric": 18500,
       "location": "Sivas / Merkez",
       "category": "Kiralık",
       "image": "/ilan-images/84e43876eb69c67f.avif",
@@ -313,31 +313,17 @@
     },
     {
       "id": "ilan-202614d708a3",
-      "title": "Konut Ferah Emlak Ofisinden Acil! Arsa Hastalık Sebebiyle",
-      "price": "4.700.000 TL",
-      "priceNumeric": 4700000,
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN ÇAYBOYUNDA SATILIK BAHÇE",
+      "price": "3.650.000 TL",
+      "priceNumeric": 3650000,
       "location": "Sivas / Merkez",
       "category": "Arsa",
-      "image": "",
+      "image": "/ilan-images/e22ac72f61248c3d.avif",
       "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-cayboyunda-satilik-bahce-1339371309/detay",
       "area": "",
       "photos": [],
       "desc": "",
       "ilanNo": "1339371309"
-    },
-    {
-      "id": "ilan-6c28acdb8879",
-      "title": "TOPRAK GAYRİMENKULDEN İNÖNÜ MAHALLESİNDE 2+1 DAİRE",
-      "price": "2.700.000 TL",
-      "priceNumeric": 2700000,
-      "location": "Sivas / Merkez",
-      "category": "Satılık",
-      "image": "/ilan-images/f077209ec3e125bf.avif",
-      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-toprak-gayrimenkulden-inonu-mahallesinde-2-plus1-daire-1338855183/detay",
-      "area": "125 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1338855183"
     },
     {
       "id": "ilan-1496aa25f442",
@@ -368,20 +354,6 @@
       "ilanNo": "1337802389"
     },
     {
-      "id": "ilan-699148a734a8",
-      "title": "SİVAS TOPRAK GAYRİMENKULDEN GÜLTEPEDE 386M2 ARSA VE MÜSTAKİL EV",
-      "price": "4.650.000 TL",
-      "priceNumeric": 4650000,
-      "location": "Sivas / Merkez",
-      "category": "Arsa",
-      "image": "/ilan-images/c5bdd321262db372.avif",
-      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-gultepede-386m2-arsa-ve-mustakil-ev-1337486667/detay",
-      "area": "386 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1337486667"
-    },
-    {
       "id": "ilan-6d056929ecb3",
       "title": "SİVAS TOPRAK GAYRİMENKUL DEN SELÇUKLU MAH. KİRALIK 2+1 DAİRE",
       "price": "17.000 TL",
@@ -394,20 +366,6 @@
       "photos": [],
       "desc": "",
       "ilanNo": "1337069706"
-    },
-    {
-      "id": "ilan-2bff2be0b58e",
-      "title": "SİVAS TOPRAK GAYRİMENKULDEN BAHTİYAR BOSTAN MAH. 5+1 DUBLEKS",
-      "price": "4.250.000 TL",
-      "priceNumeric": 4250000,
-      "location": "Sivas / Merkez",
-      "category": "Satılık",
-      "image": "/ilan-images/7ead82c821cd6cf8.avif",
-      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-bahtiyar-bostan-mah-5-plus1-dubleks-1336754199/detay",
-      "area": "175 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1336754199"
     },
     {
       "id": "ilan-bb959a0391df",
@@ -466,20 +424,6 @@
       "ilanNo": "1335652259"
     },
     {
-      "id": "ilan-4a74b8f783ee",
-      "title": "TOPRAK GAYRİMENKULDEN HUZUR MAHALLESİNDE 2+1 SATILIK DAİRE",
-      "price": "3.195.000 TL",
-      "priceNumeric": 3195000,
-      "location": "Sivas / Merkez",
-      "category": "Satılık",
-      "image": "/ilan-images/f75db5e164ebcff0.avif",
-      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-toprak-gayrimenkulden-huzur-mahallesinde-2-plus1-satilik-daire-1335427718/detay",
-      "area": "90 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1335427718"
-    },
-    {
       "id": "ilan-673944ac9e4d",
       "title": "SİVAS TOPRAK GAYRİMENKUL'DEN M.AKİF ERSOY MAH.CADDE ÜZERİ 3+1",
       "price": "3.950.000 TL",
@@ -520,20 +464,6 @@
       "photos": [],
       "desc": "",
       "ilanNo": "1334461800"
-    },
-    {
-      "id": "ilan-21f3708b48ae",
-      "title": "SİVAS TOPRAK GAYRİMENKULDEN AKDEĞİRMEN,DE KİRALIK 3+1 DAİRE",
-      "price": "23.000 TL",
-      "priceNumeric": 23000,
-      "location": "Sivas / Merkez",
-      "category": "Kiralık",
-      "image": "/ilan-images/b9e01af2b6761726.avif",
-      "url": "https://sahibinden.com/ilan/emlak-konut-kiralik-sivas-toprak-gayrimenkulden-akdegirmen,de-kiralik-3-plus1-daire-1334446523/detay",
-      "area": "140 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1334446523"
     },
     {
       "id": "ilan-c8319f2f4edd",
@@ -634,20 +564,6 @@
       "ilanNo": "1331797045"
     },
     {
-      "id": "ilan-15f67463ef2c",
-      "title": "TOPRAK GAYRİMENKULDEN ÇAYYURT MAHALLESİNDE TARLA",
-      "price": "2.500.000 TL",
-      "priceNumeric": 2500000,
-      "location": "Sivas / Merkez",
-      "category": "Arsa",
-      "image": "/ilan-images/25e204f68eadbbea.avif",
-      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-toprak-gayrimenkulden-cayyurt-mahallesinde-tarla-1331789246/detay",
-      "area": "",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1331789246"
-    },
-    {
       "id": "ilan-53428a311d51",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN TUZLUGÖL'DE 3+1 SATILIK DAİRELER",
       "price": "4.300.000 TL",
@@ -664,8 +580,8 @@
     {
       "id": "ilan-ca02cb84d6a0",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KİRALIK EŞYALI LÜKS 1+1 DAİRE",
-      "price": "29.000 TL",
-      "priceNumeric": 29000,
+      "price": "28.000 TL",
+      "priceNumeric": 28000,
       "location": "Sivas / Merkez",
       "category": "Kiralık",
       "image": "/ilan-images/b19128a03aed3096.avif",
@@ -747,12 +663,12 @@
     },
     {
       "id": "ilan-1e6c71388f10",
-      "title": "SİVAS TOPRAK GAYRİMENKULDEN SIFIR 3+1 MERKEZİ KONUMDA DAİRE",
-      "price": "6.500.000 TL",
-      "priceNumeric": 6500000,
+      "title": "Daire 3+1 Bu Fiyata Yok! Geniş Hastalık Sebebiyle Açık & Kapalı Otopark Var",
+      "price": "4.300.000 TL",
+      "priceNumeric": 4300000,
       "location": "Sivas / Merkez",
       "category": "Satılık",
-      "image": "/ilan-images/3f0e6529205031c4.avif",
+      "image": "",
       "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-sifir-3-plus1-merkezi-konumda-daire-1325351695/detay",
       "area": "140 m²",
       "photos": [],
@@ -1012,20 +928,6 @@
       "ilanNo": "1309631491"
     },
     {
-      "id": "ilan-c863d17fe0c2",
-      "title": "SİVAS TOPRAK GAYRİMENKULDEN ANA YOLA SIFIR ARSA FIRSATI",
-      "price": "23.000.000 TL",
-      "priceNumeric": 23000000,
-      "location": "Sivas / Merkez",
-      "category": "Arsa",
-      "image": "/ilan-images/bb877248a2619242.avif",
-      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-ana-yola-sifir-arsa-firsati-1308509834/detay",
-      "area": "",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1308509834"
-    },
-    {
       "id": "ilan-310ff511dae6",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN KIZILKAVRAZ,DA TEK TAPU FIRSAT TARLA",
       "price": "5.500.000 TL",
@@ -1132,20 +1034,6 @@
       "category": "Arsa",
       "image": "/ilan-images/07e874f51d7ff5cd.avif",
       "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-307m2-esenyurt-ta-arsa-1284044723/detay",
-      "area": "307 m²",
-      "photos": [],
-      "desc": "",
-      "ilanNo": "1284044723"
-    },
-    {
-      "id": "ilan-f44cb02885c6",
-      "title": "SİVAS TOPRAK GAYRİMENKULDEN 307m² ESENYURT'TA ARSA",
-      "price": "1.450.000 TL",
-      "priceNumeric": 1450000,
-      "location": "Sivas / Merkez",
-      "category": "Arsa",
-      "image": "/ilan-images/07e874f51d7ff5cd.avif",
-      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-307m-esenyurt-ta-arsa-1284044723/detay",
       "area": "307 m²",
       "photos": [],
       "desc": "",
@@ -1265,12 +1153,12 @@
     },
     {
       "id": "ilan-f5c3a100d6c4",
-      "title": "SİVAS TOPRAK GAYRİMENKUL DEN MERKEZE YAKIN TAŞLIDEREDE BAHÇE",
+      "title": "Bilinmiyor Satılık Tarla Fiyat Düştü! Bu Fiyata Yok! Hastalık Sebebiyle Emlak Ofisinden",
       "price": "900.000 TL",
       "priceNumeric": 900000,
       "location": "Sivas / Merkez",
       "category": "Arsa",
-      "image": "/ilan-images/15e26349ea658cfc.jpg",
+      "image": "",
       "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkul-den-merkeze-yakin-tasliderede-bahce-1247706064/detay",
       "area": "",
       "photos": [],
