@@ -1,8 +1,36 @@
 {
-  "updatedAt": "2026-10-05T07:24:52.995Z",
+  "updatedAt": "2026-10-07T08:16:47.732Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 88,
+  "count": 90,
   "listings": [
+    {
+      "id": "ilan-8f3634ddc9af",
+      "title": "TOPRAK GAYRİMENKULDEN ŞEYHŞAMİL MAH. 4+1 LÜKS DAİRE",
+      "price": "6.000.000 TL",
+      "priceNumeric": 6000000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/195e92d72481aeb8.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-toprak-gayrimenkulden-seyhsamil-mah-4-plus1-luks-daire-1344125519/detay",
+      "area": "160 m²",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1344125519"
+    },
+    {
+      "id": "ilan-91ff372addc7",
+      "title": "SİVAS TOPRAK GAYRİMENKUL'DEN SİVAS LİSESİ KARŞISI 3+1 SATILIK",
+      "price": "4.350.000 TL",
+      "priceNumeric": 4350000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/ce6cdd355affd031.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkul-den-sivas-lisesi-karsisi-3-plus1-satilik-1344088047/detay",
+      "area": "145 m²",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1344088047"
+    },
     {
       "id": "ilan-c608fdb0c94a",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN İZMİRDE 4+1 BAHÇELİ VİLLA",
