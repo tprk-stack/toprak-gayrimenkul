@@ -1,8 +1,36 @@
 {
-  "updatedAt": "2026-10-07T08:16:47.732Z",
+  "updatedAt": "2026-10-08T07:09:46.462Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 90,
+  "count": 93,
   "listings": [
+    {
+      "id": "ilan-ac590b8eeb22",
+      "title": "SİVAS TOPRAK GAYRİMENKUL'DEN KİRALIK KLAVUZ MAH. SIFIR 3+1 DAİRE",
+      "price": "2026 24.500 TL",
+      "priceNumeric": 202624500,
+      "location": "Sivas / Merkez",
+      "category": "Kiralık",
+      "image": "/ilan-images/bd670c1b3f87b7d5.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-kiralik-sivas-toprak-gayrimenkul-den-kiralik-klavuz-mah-sifir-3-plus1-daire-1344558284/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1344558284"
+    },
+    {
+      "id": "ilan-a77f129994b0",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN POLİS LOJ. TOKİ DE SATILIK 3+1 DAİRE",
+      "price": "2026 3.250.000 TL",
+      "priceNumeric": 20263250000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/353cca043cdf01cb.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-polis-loj-toki-de-satilik-3-plus1-daire-1344546319/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1344546319"
+    },
     {
       "id": "ilan-8f3634ddc9af",
       "title": "TOPRAK GAYRİMENKULDEN ŞEYHŞAMİL MAH. 4+1 LÜKS DAİRE",
@@ -940,6 +968,20 @@
       "photos": [],
       "desc": "",
       "ilanNo": "1309631491"
+    },
+    {
+      "id": "ilan-0e131cb6071a",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN ULTRA LÜKS CADDE ÜZERİ 5+1 DAİRE",
+      "price": "2026 9.650.000 TL",
+      "priceNumeric": 20269650000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/b4000f6ba82341cc.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-ultra-luks-cadde-uzeri-5-plus1-daire-1308511526/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1308511526"
     },
     {
       "id": "ilan-310ff511dae6",
