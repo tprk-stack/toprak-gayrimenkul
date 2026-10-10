@@ -1,7 +1,7 @@
 {
-  "updatedAt": "2026-10-08T07:09:46.462Z",
+  "updatedAt": "2026-10-10T11:52:54.424Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 93,
+  "count": 94,
   "listings": [
     {
       "id": "ilan-ac590b8eeb22",
@@ -982,6 +982,20 @@
       "photos": [],
       "desc": "",
       "ilanNo": "1308511526"
+    },
+    {
+      "id": "ilan-c863d17fe0c2",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN ANA YOLA SIFIR ARSA FIRSATI",
+      "price": "2026 23.000.000 TL",
+      "priceNumeric": 202623000000,
+      "location": "Sivas / Merkez",
+      "category": "Arsa",
+      "image": "/ilan-images/8b5d78654c6daea4.avif",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-ana-yola-sifir-arsa-firsati-1308509834/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1308509834"
     },
     {
       "id": "ilan-310ff511dae6",
