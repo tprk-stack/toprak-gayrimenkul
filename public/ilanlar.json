@@ -1,8 +1,36 @@
 {
-  "updatedAt": "2026-10-15T09:29:43.933Z",
+  "updatedAt": "2026-10-17T09:48:01.671Z",
   "source": "https://sivastoprakgayrimenkulsivas.sahibinden.com/",
-  "count": 95,
+  "count": 97,
   "listings": [
+    {
+      "id": "ilan-514697abdd10",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN TUZLUGÖLDE %50 PEŞİNAT İLE 3+1 DAİRE",
+      "price": "2026 4.500.000 TL",
+      "priceNumeric": 20264500000,
+      "location": "Sivas / Merkez",
+      "category": "Satılık",
+      "image": "/ilan-images/ae133db9721ce713.avif",
+      "url": "https://sahibinden.com/ilan/emlak-konut-satilik-sivas-toprak-gayrimenkulden-tuzlugolde-50-pesinat-ile-3-plus1-daire-1346292703/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1346292703"
+    },
+    {
+      "id": "ilan-bb721975f42c",
+      "title": "SİVAS TOPRAK GAYRİMENKULDEN PORSUK ANA YOL KENARI FIRSAT TARLA",
+      "price": "2026 3.150.000 TL",
+      "priceNumeric": 20263150000,
+      "location": "Sivas / Merkez",
+      "category": "Arsa",
+      "image": "/ilan-images/e673edd922d799b8.avif",
+      "url": "https://sahibinden.com/ilan/emlak-arsa-satilik-sivas-toprak-gayrimenkulden-porsuk-ana-yol-kenari-firsat-tarla-1346128733/detay",
+      "area": "",
+      "photos": [],
+      "desc": "",
+      "ilanNo": "1346128733"
+    },
     {
       "id": "ilan-85365f16cedf",
       "title": "SİVAS TOPRAK GAYRİMENKULDEN SEYRANTEPE DE SIFIR 3+1 DAİRE",
